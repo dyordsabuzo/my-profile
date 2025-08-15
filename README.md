@@ -1,3 +1,9 @@
+# How this was built
+
+1. Created using astro
+2. Install react `bunx astro add react`
+
+
 # Astro Resume Theme
 
 Astro Resume Theme is a fully customizable and responsive template, built to help you create a beautiful online resume or portfolio with ease. It is powered by Astro and styled using Tailwind CSS, making it fast, modern, and easy to work with.

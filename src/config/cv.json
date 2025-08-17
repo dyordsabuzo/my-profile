@@ -8,55 +8,53 @@
   "experiences": [
     {
       "title": "Senior Software Engineer",
-      "sub_title": "Tech Solutions Inc.",
-      "years": "2021 - Present",
+      "sub_title": "Secure Code Warrior",
+      "years": "August 2024 - August 2025",
       "details": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS."
     },
     {
-      "title": "Software Engineer",
-      "sub_title": "Innovate Labs",
-      "years": "2018 - 2021",
+      "title": "Senior Devops Engineer",
+      "sub_title": "Secure Code Warrior",
+      "years": "August 2019 - August 2024",
       "details": "Developed and maintained web applications for various clients. Key contributor in migrating legacy systems to cloud infrastructure."
     },
     {
-      "title": "Junior Developer",
-      "sub_title": "Creative Apps Studio",
-      "years": "2015 - 2018",
+      "title": "Devops Lead",
+      "sub_title": "Bambora",
+      "years": "April 2016 – May 2019",
       "details": "Worked on mobile app development, collaborating with design teams to create user-friendly applications."
     }
   ],
   "education": [
     {
-      "title": "Bachelor of Science in Computer Science",
-      "sub_title": "University of Modern Tech",
-      "years": "2015 - 2019",
-      "details": "Graduated with honors. Specialized in software development, data structures, and algorithms. Worked on various open-source projects and completed internships in tech companies."
+      "title": "Master in Business Information Technology",
+      "sub_title": "Royal Melbourne Institute of Technology",
+      "years": "2007-2009"
     },
     {
-      "title": "Master of Science in Software Engineering",
-      "sub_title": "Global Tech Institute",
-      "years": "2019 - 2021",
-      "details": "Focused on advanced algorithms, cloud computing, and full-stack development. Published research papers on scalable microservices architecture."
+      "title": "Bachelor of Science in Business Economics",
+      "sub_title": "University of the Philippines",
+      "years": "1997-2000"
     }
   ],
   "projects": [
     {
-      "imageUrl": "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=764&auto=format&fit=crop",
-      "title": "hello.com",
+      "imageUrl": "https://learn.pablosspot.com/_astro/home.BqQFpXAB.webp",
+      "title": "Pablo's spot learning",
       "type": "Website",
-      "link": "https://github.com/wasutz/astro-resume-theme"
+      "link": "https://learn.pablosspot.com"
     },
     {
-      "imageUrl": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=764&auto=format&fit=crop",
-      "title": "Paul UI kit collections",
-      "type": "UI Kit",
-      "link": "https://github.com/wasutz/astro-resume-theme"
+      "imageUrl": "https://sydneytsunami.org.au/static/media/main-min.1883277041bdebc10f67.jpg",
+      "title": "Sydney Tsunami Dragon Boat Club website",
+      "type": "Sports club website",
+      "link": "https://sydneytsunami.org.au"
     },
     {
-      "imageUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=764&auto=format&fit=crop",
-      "title": "paul.com",
-      "type": "Website",
-      "link": "https://github.com/wasutz/astro-resume-theme"
+      "imageUrl": "https://i9.ytimg.com/vi_webp/2Unq_AhpSZo/mqdefault.webp?v=6837c1f9&sqp=CPzFhcUG&rs=AOn4CLApPdNjx9ny5N3n6sxGVd2FFYbUWQ",
+      "title": "Pablo's spot",
+      "type": "Youtube channel",
+      "link": "https://www.youtube.com/channel/UCrRCGS8v3Pa5dTxS3xKKipA"
     }
   ],
   "menuItems": [
@@ -72,7 +70,7 @@
   "socialLinks": [
     {
       "iconName": "Github",
-      "link": "https://github.com/wasutz/astro-resume-theme"
+      "link": "https://github.com/dyordsabuzo"
     },
     {
       "iconName": "Facebook",

@@ -1,9 +1,10 @@
 {
   "basic": {
     "name": "George Abuzo",
-    "job": "Software/Cloud Engineer",
+    "job": "Senior Software/Cloud Engineer",
     "summary": "Driving innovation and efficiency across on-premise and cloud environments with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities.",
-    "cv_file_name": "paul_cv.pdf"
+    "cv_file_name": "paul_cv.pdf",
+    "photo": "https://media.licdn.com/dms/image/v2/D5603AQHmPwyP5MX9-w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701486909696?e=1758153600&v=beta&t=hzOc2uGyBCabhxjH134viWe379XNCu3a6g6MVOFmwBQ"
   },
   "experiences": [
     {

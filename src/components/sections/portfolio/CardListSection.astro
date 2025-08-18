@@ -6,7 +6,8 @@ interface Item {
   sub_title: string;
   years: string;
   location?: string;
-  details?: string;
+  overview?: string;
+  details?: string[];
 }
 
 const { title, items } = Astro.props;
@@ -25,6 +26,7 @@ const { title, items } = Astro.props;
           sub_title={item.sub_title}
           years={item.years}
           location={item.location}
+          overview={item?.overview}
           details={item?.details}
         />
       ))}

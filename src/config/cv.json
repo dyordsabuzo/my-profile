@@ -1,7 +1,7 @@
 {
   "basic": {
     "name": "George Abuzo",
-    "job": "Senior Software/Cloud Engineer",
+    "job": "Senior Software Engineer | Cloud/Devops | Systems Architecture",
     "summary": "Driving innovation and efficiency across on-premise and cloud environments with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities.",
     "cv_file_name": "paul_cv.pdf",
     "photo": "https://media.licdn.com/dms/image/v2/D5603AQHmPwyP5MX9-w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701486909696?e=1758153600&v=beta&t=hzOc2uGyBCabhxjH134viWe379XNCu3a6g6MVOFmwBQ"
@@ -12,19 +12,48 @@
       "sub_title": "Secure Code Warrior",
       "years": "Aug 2024 - Aug 2025",
       "location": "Sydney, Australia",
-      "details": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS."
+      "overview": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS.",
+      "details": [
+        "Build platform and engagement components of the learning platform",
+        "Build platform and engagement components of the learning platform"
+      ]
     },
     {
-      "title": "Senior Devops Engineer",
+      "title": "Senior Devops Lead",
       "sub_title": "Secure Code Warrior",
       "years": "Aug 2019 - Aug 2024",
-      "details": "Developed and maintained web applications for various clients. Key contributor in migrating legacy systems to cloud infrastructure."
+      "location": "Sydney, Australia",
+      "details": [
+        "Architecture, design, and support of the Secure Code Warrior cloud and infrastructure strategy (AWS)",
+        "Lead junior cloud engineers to understand, build & maintain infrastructure",
+        "Direct interaction with internal stakeholders",
+        "Technical Advisor on solution deployment projects, including hands-on configuration of complex infrastructure  components",
+        "Partners internally with tech-leads to provide expert guidance on our cloud environment ",
+        "Project management of all components for environment rollout & related infrastructure initiatives ",
+        "Develop documentation for best practices for server infrastructure, virtualization, and cloud computing  ",
+        "Review operations and business requirements for projects pertaining to Secure Code Warrior's cloud infrastructure with all project teams, management and client services groups",
+        "Provide support to technical leads to enable a streamlined development environment for developers through best practices towards Continuous Integration & Continuous Delivery (CI/CD)",
+        "Provide support in ensuring security compliance - ISO20071, SOC2"
+      ]
     },
     {
       "title": "Devops Lead",
       "sub_title": "Bambora",
       "years": "April 2016 – May 2019",
-      "details": "Worked on mobile app development, collaborating with design teams to create user-friendly applications."
+      "details": [
+        "Team Lead for team responsible in application and infrastructure management and operational support for Bambora payments systems",
+        "Monitoring of system availability and automation of DevOps processes to ensure resilient production systems (System monitoring and alerting - New Relic, Spunk, Site24x7, PagerDuty)",
+        "Responsible with Issue investigation, triage and resolution",
+        "Automation and execution of production deployments",
+        "Works with product, development and quality assurance teams on application deployment to production",
+        "Responsible in triaging production issues that require long term permanent fix and resolution",
+        "Responsible in implementing CI/CD best practices and management of infrastructure as code. CI/CD  experience using Bamboo for build and integration and Octopus for deployment, Bitbucket and Git for source  control",
+        "Experience with orchestration using terraform and AWS CloudFormation with infrastructure stacks deployed  across at least 3 VPCs (1 VPC per environment) with infrastructure as code stored in git. Implementation of  scalable infrastructure using Auto Scaling.",
+        "Exposure to Route53 configuration of endpoint accessibility and working with development team to define  requirements for containerization using Docker and AWS ECR and Kubernetes.",
+        "Adapting Agile best practices - sprint planning for DevOps continues improvement and Kanban for BAU ",
+        "Leveraging on open source tools to improve current CI/CD processes and developing automated tools and  processes available for business users",
+        "Manages team of 3 Devops resources, 3 Application Support and 3 Developers"
+      ]
     }
   ],
   "education": [

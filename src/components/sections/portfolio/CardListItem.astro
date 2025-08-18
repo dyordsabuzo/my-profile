@@ -1,13 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
-const { title, sub_title, years, location, details } = Astro.props;
+const { title, sub_title, years, location, overview, details } = Astro.props;
 ---
 
 <li class="p-5 bg-background-offset shadow-lg rounded-xl border border-default">
   <div class="flex flex-col sm:flex-row justify-between items-start">
     <div class="mb-4 sm:mb-0">
       <h3 class="text-2xl font-semibold">{title}</h3>
-      <p class="text-lg font-medium text-secondary pt-2">{sub_title}</p>
+      <p class="text-lg font-medium text-secondary pt-1">{sub_title}</p>
     </div>
     <div class="text-sm text-offset sm:text-right whitespace-nowrap flex flex-col gap-1 sm:flex-row sm:gap-4">
         <p class="text-sm whitespace-nowrap flex align-center gap-1">
@@ -21,5 +21,10 @@ const { title, sub_title, years, location, details } = Astro.props;
         }
     </div>
   </div>
-  <p class="mt-4 text-offset leading-relaxed">{details}</p>
+  {overview && <p class="mt-4 text-offset leading-relaxed">{overview}</p>}
+  <ul class="list-disc pl-4 space-y-1 text-gray-500 text-sm">
+    {details?.map((item: string) => (
+        <li class="mt-4 text-offset leading-relaxed">{item}</li>
+    ))}
+  </ul>
 </li>

@@ -1,5 +1,6 @@
 ---
-const { title, sub_title, years, details } = Astro.props;
+import { Icon } from "astro-icon/components";
+const { title, sub_title, years, location, details } = Astro.props;
 ---
 
 <li class="p-5 bg-background-offset shadow-lg rounded-xl border border-default">
@@ -8,7 +9,17 @@ const { title, sub_title, years, details } = Astro.props;
       <h3 class="text-2xl font-semibold">{title}</h3>
       <p class="text-lg font-medium text-secondary pt-2">{sub_title}</p>
     </div>
-    <p class="text-sm text-offset sm:text-right whitespace-nowrap">{years}</p>
+    <div class="text-sm text-offset sm:text-right whitespace-nowrap flex flex-col gap-1 sm:flex-row sm:gap-4">
+        <p class="text-sm whitespace-nowrap flex align-center gap-1">
+            <Icon name="Calendar" />
+            <span>{years}</span>
+        </p>
+        {location && (<p class="text-sm whitespace-nowrap flex gap-1">
+                <Icon name="Location" />
+                <span>{location}</span>
+            </p>)
+        }
+    </div>
   </div>
   <p class="mt-4 text-offset leading-relaxed">{details}</p>
 </li>

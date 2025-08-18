@@ -5,6 +5,7 @@ interface Item {
   title: string;
   sub_title: string;
   years: string;
+  location?: string;
   details?: string;
 }
 
@@ -23,6 +24,7 @@ const { title, items } = Astro.props;
           title={item.title}
           sub_title={item.sub_title}
           years={item.years}
+          location={item.location}
           details={item?.details}
         />
       ))}

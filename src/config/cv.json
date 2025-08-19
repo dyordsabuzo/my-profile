@@ -1,7 +1,7 @@
 {
   "basic": {
     "name": "George Abuzo",
-    "job": "Senior Software Engineer | Cloud/Devops | Systems Architecture",
+    "job": "Senior Software Engineer | Cloud Engineering | Devops | Systems Architecture",
     "summary": "Driving innovation and efficiency across on-premise and cloud environments with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities.",
     "cv_file_name": "paul_cv.pdf",
     "photo": "https://media.licdn.com/dms/image/v2/D5603AQHmPwyP5MX9-w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701486909696?e=1758153600&v=beta&t=hzOc2uGyBCabhxjH134viWe379XNCu3a6g6MVOFmwBQ"
@@ -10,18 +10,25 @@
     {
       "title": "Senior Software Engineer",
       "sub_title": "Secure Code Warrior",
-      "years": "Aug 2024 - Aug 2025",
+      "years": "08/2024 - 08/2025",
       "location": "Sydney, Australia",
       "overview": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS.",
       "details": [
         "Build platform and engagement components of the learning platform",
-        "Build platform and engagement components of the learning platform"
+        "Build platform and engagement components of the learning platform",
+        "Drive Developer Engagement in service of reducing administration of platform",
+        "Tournaments and gamification of learning platform",
+        "Partner integrations and API development",
+        "Micro learning components",
+        "Login and SSO",
+        "organizational hierarchy",
+        "Security vulnerability fixes"
       ]
     },
     {
       "title": "Senior Devops Lead",
       "sub_title": "Secure Code Warrior",
-      "years": "Aug 2019 - Aug 2024",
+      "years": "08/2019 - 08/2024",
       "location": "Sydney, Australia",
       "details": [
         "Architecture, design, and support of the Secure Code Warrior cloud and infrastructure strategy (AWS)",
@@ -39,7 +46,8 @@
     {
       "title": "Devops Lead",
       "sub_title": "Bambora",
-      "years": "April 2016 – May 2019",
+      "years": "04/2016 – 05/2019",
+      "location": "Sydney, Australia",
       "details": [
         "Team Lead for team responsible in application and infrastructure management and operational support for Bambora payments systems",
         "Monitoring of system availability and automation of DevOps processes to ensure resilient production systems (System monitoring and alerting - New Relic, Spunk, Site24x7, PagerDuty)",
@@ -58,16 +66,111 @@
   ],
   "education": [
     {
-      "title": "Master in Business Information Technology",
+      "title": "Masters in Business Information Technology",
       "sub_title": "Royal Melbourne Institute of Technology",
-      "years": "2007-2009"
+      "years": "2007-2009",
+      "location": "Melbourne, Australia"
     },
     {
       "title": "Bachelor of Science in Business Economics",
-      "sub_title": "University of the Philippines",
-      "years": "1997-2000"
+      "sub_title": "University of the Philippines, Diliman",
+      "years": "1997-2000",
+      "location": "Quezon City, Philippines"
     }
   ],
+  "skills": {
+    "programmingLanguages": [
+      {
+        "name": "JavaScript",
+        "icon": "javascript",
+        "level": "Expert",
+        "category": "language"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "typescript",
+        "level": "Advanced",
+        "category": "language"
+      },
+      {
+        "name": "Python",
+        "icon": "python",
+        "level": "Advanced",
+        "category": "language"
+      },
+      {
+        "name": "Go",
+        "icon": "go",
+        "level": "Intermediate",
+        "category": "language"
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "React",
+        "icon": "react",
+        "level": "Expert",
+        "category": "frontend"
+      },
+      {
+        "name": "Node.js",
+        "icon": "nodejs",
+        "level": "Advanced",
+        "category": "backend"
+      },
+      {
+        "name": "Astro",
+        "icon": "astro",
+        "level": "Advanced",
+        "category": "frontend"
+      }
+    ],
+    "tools": [
+      {
+        "name": "AWS",
+        "icon": "amazonwebservices",
+        "level": "Expert",
+        "category": "cloud",
+        "iconSuffix": "original-wordmark"
+      },
+      {
+        "name": "Terraform",
+        "icon": "terraform",
+        "level": "Advanced",
+        "category": "devops"
+      },
+      {
+        "name": "Docker",
+        "icon": "docker",
+        "level": "Expert",
+        "category": "devops"
+      },
+      {
+        "name": "Git",
+        "icon": "git",
+        "level": "Expert",
+        "category": "source-control"
+      },
+      {
+        "name": "Github",
+        "icon": "github",
+        "level": "Expert",
+        "category": "source-control"
+      },
+      {
+        "name": "Kubernetes",
+        "icon": "kubernetes",
+        "level": "Advanced",
+        "category": "devops"
+      },
+      {
+        "name": "Jenkins",
+        "icon": "jenkins",
+        "level": "Advanced",
+        "category": "cicd"
+      }
+    ]
+  },
   "projects": [
     {
       "imageUrl": "https://learn.pablosspot.com/_astro/home.BqQFpXAB.webp",

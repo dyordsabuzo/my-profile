@@ -1,6 +1,14 @@
 ---
 import CardListSection from './CardListSection.astro';
-import { education } from '../../../config/cv.json';
+import { education, companies } from '../../../config/cv.json';
+
+const updatedEducation = education.map((item) => {
+  const photo = companies.find((company) => company.name === item.sub_title)?.logo;
+  return {
+    ...item,
+    photo
+  };
+});
 ---
 
-<CardListSection title="Education" items={education} />
+<CardListSection title="Education" items={updatedEducation} type="education"/>

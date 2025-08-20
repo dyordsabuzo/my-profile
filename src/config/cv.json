@@ -2,10 +2,28 @@
   "basic": {
     "name": "George Abuzo",
     "job": "Senior Software Engineer | Cloud Engineering | Devops | Systems Architecture",
-    "summary": "Driving innovation and efficiency across on-premise and cloud environments with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities.",
+    "summary": "Driving innovation and efficiency with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities. Passionate about coding and applying creative solutions to business problems, with a strong focus on continuous learning, modern frameworks, and impactful delivery. Equally confident working independently or collaboratively, I bring strong leadership, adaptability, and a proven ability to turn ideas into results.",
     "cv_file_name": "paul_cv.pdf",
     "photo": "https://media.licdn.com/dms/image/v2/D5603AQHmPwyP5MX9-w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701486909696?e=1758153600&v=beta&t=hzOc2uGyBCabhxjH134viWe379XNCu3a6g6MVOFmwBQ"
   },
+  "companies": [
+    {
+      "name": "Secure Code Warrior",
+      "logo": "https://media.licdn.com/dms/image/v2/D560BAQFWTru0kAwQPQ/company-logo_200_200/company-logo_200_200/0/1721407525341/secure_code_warrior_logo?e=1758758400&v=beta&t=TNmq1y8rvYfmzxZd_jMc38H3yHjn9RmSzExCyoLSDnc"
+    },
+    {
+      "name": "Bambora",
+      "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGa5eSlBLrZew/company-logo_200_200/company-logo_200_200/0/1630631561026/bambora_logo?e=1758758400&v=beta&t=gxzClsuOSFWCcuLhaGTkb7x0J1AJg4PW1AGQeZTRs4s"
+    },
+    {
+      "name": "Royal Melbourne Institute of Technology",
+      "logo": "https://media.licdn.com/dms/image/v2/D560BAQEGU1obJOmROQ/company-logo_200_200/company-logo_200_200/0/1688439184668/rmit_university_logo?e=1758758400&v=beta&t=DNbrStp1ODajYTLivj8UAjEKIdt21x_AL5jOqKB4XpQ"
+    },
+    {
+      "name": "University of the Philippines",
+      "logo": "https://media.licdn.com/dms/image/v2/C560BAQFhc7r3beFtvA/company-logo_200_200/company-logo_200_200/0/1672705537119/university_of_the_philippines_logo?e=1758758400&v=beta&t=txs1hM3gJ9yasyzhgCNDhr0FcANnK_R2GcmxIm7vta8"
+    }
+  ],
   "experiences": [
     {
       "title": "Senior Software Engineer",
@@ -35,8 +53,8 @@
         "Lead junior cloud engineers to understand, build & maintain infrastructure",
         "Direct interaction with internal stakeholders",
         "Technical Advisor on solution deployment projects, including hands-on configuration of complex infrastructure  components",
-        "Partners internally with tech-leads to provide expert guidance on our cloud environment ",
-        "Project management of all components for environment rollout & related infrastructure initiatives ",
+        "Partners internally with tech-leads to provide expert guidance on our cloud environment",
+        "Project management of all components for environment rollout & related infrastructure initiatives",
         "Develop documentation for best practices for server infrastructure, virtualization, and cloud computing  ",
         "Review operations and business requirements for projects pertaining to Secure Code Warrior's cloud infrastructure with all project teams, management and client services groups",
         "Provide support to technical leads to enable a streamlined development environment for developers through best practices towards Continuous Integration & Continuous Delivery (CI/CD)",
@@ -49,18 +67,19 @@
       "years": "04/2016 – 05/2019",
       "location": "Sydney, Australia",
       "details": [
-        "Team Lead for team responsible in application and infrastructure management and operational support for Bambora payments systems",
-        "Monitoring of system availability and automation of DevOps processes to ensure resilient production systems (System monitoring and alerting - New Relic, Spunk, Site24x7, PagerDuty)",
-        "Responsible with Issue investigation, triage and resolution",
-        "Automation and execution of production deployments",
-        "Works with product, development and quality assurance teams on application deployment to production",
-        "Responsible in triaging production issues that require long term permanent fix and resolution",
-        "Responsible in implementing CI/CD best practices and management of infrastructure as code. CI/CD  experience using Bamboo for build and integration and Octopus for deployment, Bitbucket and Git for source  control",
-        "Experience with orchestration using terraform and AWS CloudFormation with infrastructure stacks deployed  across at least 3 VPCs (1 VPC per environment) with infrastructure as code stored in git. Implementation of  scalable infrastructure using Auto Scaling.",
-        "Exposure to Route53 configuration of endpoint accessibility and working with development team to define  requirements for containerization using Docker and AWS ECR and Kubernetes.",
+        "Lead team responsible in application and infrastructure management and operational support for Bambora payments systems",
+        "Responsible in setting up observability for systems using New Relic, Splunk, Site24x7 and PagerDuty",
+        "Automation of system monitoring and alerting and production deployments",
+        "Responsible in issue investigation, triage and resolution",
+        "Works with Product Owners, Development and Quality Assurance teams on change management and application deployment to production",
+        "Collaborates with Development team in triaging production issues that require long term permanent fix and resolution",
+        "Collaborates with Development team on containerization requirements",
+        "Responsible in implementing CI/CD best practices and management of infrastructure as code using Bamboo for build and integration and Octopus for deployment with Bitbucket and Git for source control",
+        "Infrastructure management and orchestration using Terraform and AWS CloudFormation (Infrastructure stack include AWS VPCs, ELBs, EC2s, S3, Lambda, Autoscaling, ECR, ECS)",
+        "Network and domain configration using Route 53 for endpoint accessibility",
         "Adapting Agile best practices - sprint planning for DevOps continues improvement and Kanban for BAU ",
-        "Leveraging on open source tools to improve current CI/CD processes and developing automated tools and  processes available for business users",
-        "Manages team of 3 Devops resources, 3 Application Support and 3 Developers"
+        "Leads team of 3 Devops/Site Reliability Engineers, 3 Application Support Engineers and 3 Developers",
+        "Provide support in ensuring payment systems compliance - PCI DSS"
       ]
     }
   ],
@@ -73,103 +92,238 @@
     },
     {
       "title": "Bachelor of Science in Business Economics",
-      "sub_title": "University of the Philippines, Diliman",
+      "sub_title": "University of the Philippines",
       "years": "1997-2000",
       "location": "Quezon City, Philippines"
     }
   ],
   "skills": {
-    "programmingLanguages": [
-      {
-        "name": "JavaScript",
-        "icon": "javascript",
-        "level": "Expert",
-        "category": "language"
-      },
-      {
-        "name": "TypeScript",
-        "icon": "typescript",
-        "level": "Advanced",
-        "category": "language"
-      },
-      {
-        "name": "Python",
-        "icon": "python",
-        "level": "Advanced",
-        "category": "language"
-      },
-      {
-        "name": "Go",
-        "icon": "go",
-        "level": "Intermediate",
-        "category": "language"
-      }
-    ],
-    "frameworks": [
-      {
-        "name": "React",
-        "icon": "react",
-        "level": "Expert",
-        "category": "frontend"
-      },
-      {
-        "name": "Node.js",
-        "icon": "nodejs",
-        "level": "Advanced",
-        "category": "backend"
-      },
-      {
-        "name": "Astro",
-        "icon": "astro",
-        "level": "Advanced",
-        "category": "frontend"
-      }
-    ],
-    "tools": [
-      {
-        "name": "AWS",
-        "icon": "amazonwebservices",
-        "level": "Expert",
-        "category": "cloud",
-        "iconSuffix": "original-wordmark"
-      },
-      {
-        "name": "Terraform",
-        "icon": "terraform",
-        "level": "Advanced",
-        "category": "devops"
-      },
-      {
-        "name": "Docker",
-        "icon": "docker",
-        "level": "Expert",
-        "category": "devops"
-      },
-      {
-        "name": "Git",
-        "icon": "git",
-        "level": "Expert",
-        "category": "source-control"
-      },
-      {
-        "name": "Github",
-        "icon": "github",
-        "level": "Expert",
-        "category": "source-control"
-      },
-      {
-        "name": "Kubernetes",
-        "icon": "kubernetes",
-        "level": "Advanced",
-        "category": "devops"
-      },
-      {
-        "name": "Jenkins",
-        "icon": "jenkins",
-        "level": "Advanced",
-        "category": "cicd"
-      }
-    ]
+    "programmingLanguages": {
+      "name": "Programming Languages & Tools",
+      "items": [
+        {
+          "name": "JavaScript",
+          "icon": "javascript",
+          "level": "Expert",
+          "category": "language"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "typescript",
+          "level": "Advanced",
+          "category": "language"
+        },
+        {
+          "name": "Python",
+          "icon": "python",
+          "level": "Advanced",
+          "category": "language"
+        },
+        {
+          "name": "Go",
+          "icon": "go",
+          "level": "Intermediate",
+          "category": "language"
+        },
+        {
+          "name": "Git",
+          "icon": "git",
+          "level": "Expert",
+          "category": "source-control"
+        },
+        {
+          "name": "Github",
+          "icon": "github",
+          "level": "Expert",
+          "category": "source-control"
+        }
+      ]
+    },
+    "frameworks": {
+      "name": "Frameworks & Backend",
+      "items": [
+        {
+          "name": "React",
+          "icon": "react",
+          "level": "Expert",
+          "category": "frontend"
+        },
+        {
+          "name": "Node.js",
+          "icon": "nodejs",
+          "level": "Advanced",
+          "category": "backend"
+        },
+        {
+          "name": "Astro",
+          "icon": "astro",
+          "level": "Advanced",
+          "category": "frontend"
+        },
+        {
+          "name": "Yarn",
+          "icon": "yarn",
+          "level": "Advanced",
+          "category": "frontend"
+        },
+        {
+          "name": "Bun",
+          "icon": "bun",
+          "level": "Advanced",
+          "category": "frontend"
+        },
+        {
+          "name": "Mocha",
+          "icon": "mocha",
+          "level": "Advanced",
+          "category": "frontend"
+        },
+        {
+          "name": "Jest",
+          "icon": "jest",
+          "iconSuffix": "plain",
+          "level": "Advanced",
+          "category": "frontend"
+        },
+        {
+          "name": "Storybook",
+          "icon": "storybook",
+          "level": "Advanced",
+          "category": "frontend"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "mongodb",
+          "level": "Advanced",
+          "category": "frontend"
+        },
+        {
+          "name": "Postgres",
+          "icon": "postgresql",
+          "level": "Advanced",
+          "category": "frontend"
+        }
+      ]
+    },
+    "cloud": {
+      "name": "Cloud and Containerization",
+      "items": [
+        {
+          "name": "AWS",
+          "icon": "amazonwebservices",
+          "level": "Expert",
+          "category": "cloud",
+          "iconSuffix": "original-wordmark"
+        },
+        {
+          "name": "Terraform",
+          "icon": "terraform",
+          "level": "Advanced",
+          "category": "devops"
+        },
+        {
+          "name": "Kubernetes",
+          "icon": "kubernetes",
+          "level": "Advanced",
+          "category": "devops"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker",
+          "level": "Expert",
+          "category": "devops"
+        },
+        {
+          "name": "Podman",
+          "icon": "podman",
+          "level": "Expert",
+          "category": "devops"
+        },
+        {
+          "name": "ArgoCD",
+          "icon": "argocd",
+          "level": "Expert",
+          "category": "devops"
+        },
+        {
+          "name": "Nginx",
+          "icon": "nginx",
+          "level": "Expert",
+          "category": "devops"
+        }
+      ]
+    },
+    "cicd": {
+      "name": "CI/CD",
+      "items": [
+        {
+          "name": "Jenkins",
+          "icon": "jenkins",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Github actions",
+          "icon": "githubactions",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Azure pipelines",
+          "icon": "azuredevops",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Bamboo",
+          "icon": "bamboo",
+          "level": "Advanced",
+          "category": "cicd"
+        }
+      ]
+    },
+    "tools": {
+      "name": "Observability & Infrastructure Tools",
+      "items": [
+        {
+          "name": "Datadog",
+          "icon": "datadog",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Prometheus",
+          "icon": "prometheus",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Splunk",
+          "icon": "splunk",
+          "iconSuffix": "original-wordmark",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Okta",
+          "icon": "okta",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Oh My Zsh",
+          "icon": "ohmyzsh",
+          "level": "Advanced",
+          "category": "cicd"
+        },
+        {
+          "name": "Postman",
+          "icon": "postman",
+          "level": "Advanced",
+          "category": "cicd"
+        }
+      ]
+    }
   },
   "projects": [
     {
@@ -180,7 +334,7 @@
     },
     {
       "imageUrl": "https://sydneytsunami.org.au/static/media/main-min.1883277041bdebc10f67.jpg",
-      "title": "Sydney Tsunami Dragon Boat Club website",
+      "title": "Sydney Tsunami Dragon Boat Club",
       "type": "Sports club website",
       "link": "https://sydneytsunami.org.au"
     },

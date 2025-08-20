@@ -1,6 +1,15 @@
 ---
 import CardListSection from "./CardListSection.astro";
-import { experiences } from '../../../config/cv.json';
+import { experiences, companies } from '../../../config/cv.json';
+
+const updatedExperiences = experiences.map((item) => {
+  const photo = companies.find((company) => company.name === item.sub_title)?.logo;
+  return {
+    ...item,
+    photo
+  };
+});
+
 ---
 
-<CardListSection title="Experience" items={experiences} />
+<CardListSection title="Experience" items={updatedExperiences} />

@@ -8,14 +8,15 @@ interface Item {
   location?: string;
   overview?: string;
   details?: string[];
+  photo?: string;
 }
 
-const { title, items } = Astro.props;
+const { title, items, type } = Astro.props;
 ---
 
 <section class="py-14 bg-background">
   <div class="container mx-auto">
-    <h2 class="text-3xl lg:text-4xl font-semibold text-justify mb-12">
+    <h2 class="text-3xl lg:text-4xl font-semibold text-justify mb-8">
         {title}
     </h2>
 
@@ -28,6 +29,8 @@ const { title, items } = Astro.props;
           location={item.location}
           overview={item?.overview}
           details={item?.details}
+          photo={item?.photo}
+          type={type}
         />
       ))}
     </ul>

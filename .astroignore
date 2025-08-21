@@ -1,0 +1,5 @@
+src/components/sections/blog/
+src/content/blogs/
+src/pages/blogs/
+**/*blog*
+**/*exclusions*

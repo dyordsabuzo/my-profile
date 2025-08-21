@@ -1,0 +1,29 @@
+{
+  "basic": {
+    "name": "George Abuzo"
+  },
+  "menuItems": [
+    {
+      "name": "About",
+      "link": "/"
+    },
+    {
+      "name": "Blog",
+      "link": "https://learn.pablosspot.com/library/"
+    }
+  ],
+  "socialLinks": [
+    {
+      "iconName": "Github",
+      "link": "https://github.com/dyordsabuzo"
+    },
+    {
+      "iconName": "Facebook",
+      "link": "https://facebook.com"
+    },
+    {
+      "iconName": "Instagram",
+      "link": "https://instagram.com"
+    }
+  ]
+}

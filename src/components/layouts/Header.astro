@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import ThemeToggle from "../common/ThemeToggle.astro";
-import { basic, menuItems } from "../../config/cv.json";
+import { basic, menuItems } from "../../config/page.json";
 ---
 
 <header class="bg-background py-4">
@@ -15,7 +15,11 @@ import { basic, menuItems } from "../../config/cv.json";
       <!-- PC Menu -->
       <nav class="hidden sm:flex space-x-6 items-center">
         {menuItems.map((item) => (
-          <a href={item.link} class="hover:text-offset">{item.name}</a>
+          item.link.startsWith('https') ? (
+            <a href={item.link} class="hover:text-offset" target="_blank">{item.name}</a>
+          ) : (
+            <a href={item.link} class="hover:text-offset">{item.name}</a>
+          )
         ))}
       </nav>
 

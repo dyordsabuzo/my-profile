@@ -1,0 +1,61 @@
+{
+  "personalInfo": {
+    "name": "John Doe",
+    "title": "Senior Software Engineer | Devpops Engineer | System architecture"
+  },
+  "contactInfo": [
+    "Email: john.doe@example.com",
+    "Phone: +1 234 567 890",
+    "LinkedIn: linkedin.com/in/johndoe",
+    "GitHub: github.com/johndoe"
+  ],
+  "summary": "Experienced software engineer with a passion for building scalable and maintainable systems. Proficient in JavaScript/TypeScript, React/Node.js, AWS/GCP, CI/CD Pipelines, Microservices Architecture, and REST API Design.",
+  "experience": [
+    {
+      "company": "Acme Corp",
+      "duration": "2020 - Present",
+      "position": "Senior Software Engineer",
+      "achievements": [
+        "Lead developer for e-commerce platform jusd tringtong to sedfwe asdjkhdg happens with oihasdklghdfgkluhkldfvbk klbaskdufghekjlkjb blucew",
+        "Implemented microservices architecture",
+        "Lead developer for e-commerce platform jusd tringtong to sedfwe asdjkhdg happens with oihasdklghdfgkluhkldfvbk klbaskdufghekjlkjb blucew"
+      ]
+    },
+    {
+      "company": "Tech Startup",
+      "duration": "2018 - 2020",
+      "position": "Full Stack Developer",
+      "achievements": [
+        "Designed REST APIs and database schemas",
+        "Developed scalable backend services"
+      ]
+    }
+  ],
+  "skills": [
+    "JavaScript/TypeScript",
+    "React/Node.js",
+    "AWS/GCP",
+    "CI/CD Pipelines",
+    "Microservices Architecture",
+    "REST API Design"
+  ],
+  "achievements": [
+    "Reduced API response time by 60% adfsdfhas lkehfalsukfhalskdfgh alsdkfghlasd kufhldkuhaflskuf halisdhuflas",
+    "Implemented automated testing framework",
+    "Led team of 5 developers",
+    "Improved system reliability to 99.99% uptime",
+    "Reduced server costs by 30% through optimization"
+  ],
+  "education": [
+    {
+      "institution": "University of Technology",
+      "degree": "Bachelor of Science in Computer Science",
+      "year": "2014 - 2018"
+    },
+    {
+      "institution": "Coding Bootcamp",
+      "degree": "Full Stack Web Development",
+      "year": "2018 - 2019"
+    }
+  ]
+}

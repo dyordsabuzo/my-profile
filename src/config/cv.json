@@ -1,11 +1,17 @@
 {
   "basic": {
     "name": "George Abuzo",
-    "job": "Senior Software Engineer | Cloud Engineering | Devops | Systems Architecture",
+    "title": "Senior Software Engineer | Cloud Engineering | Devops | Systems Architecture",
     "summary": "Driving innovation and efficiency with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities. Passionate about coding and applying creative solutions to business problems, with a strong focus on continuous learning, modern frameworks, and impactful delivery. Equally confident working independently or collaboratively, I bring strong leadership, adaptability, and a proven ability to turn ideas into results.",
     "cv_file_name": "paul_cv.pdf",
     "photo": "https://media.licdn.com/dms/image/v2/D5603AQHmPwyP5MX9-w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1701486909696?e=1758153600&v=beta&t=hzOc2uGyBCabhxjH134viWe379XNCu3a6g6MVOFmwBQ"
   },
+  "contactInfo": [
+    "Email: dyordsabuzo@gmail.com",
+    "Phone: +61 434 509 188",
+    "LinkedIn: linkedin.com/in/george_abuzo",
+    "GitHub: github.com/dyordsabuzo"
+  ],
   "companies": [
     {
       "name": "Secure Code Warrior",
@@ -30,9 +36,7 @@
       "sub_title": "Secure Code Warrior",
       "years": "08/2024 - 08/2025",
       "location": "Sydney, Australia",
-      "overview": "Led the development of a scalable e-commerce platform that increased sales by 30%. Worked with modern technologies including React, Node.js, and AWS.",
       "details": [
-        "Build platform and engagement components of the learning platform",
         "Build platform and engagement components of the learning platform",
         "Drive Developer Engagement in service of reducing administration of platform",
         "Tournaments and gamification of learning platform",
@@ -343,30 +347,6 @@
       "title": "Pablo's spot",
       "type": "Youtube channel",
       "link": "https://www.youtube.com/channel/UCrRCGS8v3Pa5dTxS3xKKipA"
-    }
-  ],
-  "menuItems": [
-    {
-      "name": "About",
-      "link": "/"
-    },
-    {
-      "name": "Blog",
-      "link": "/blogs"
-    }
-  ],
-  "socialLinks": [
-    {
-      "iconName": "Github",
-      "link": "https://github.com/dyordsabuzo"
-    },
-    {
-      "iconName": "Facebook",
-      "link": "https://facebook.com"
-    },
-    {
-      "iconName": "Instagram",
-      "link": "https://instagram.com"
     }
   ]
 }

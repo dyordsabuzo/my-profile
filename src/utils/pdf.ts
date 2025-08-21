@@ -6,9 +6,10 @@ import {
   breakTextIntoLines,
 } from "pdf-lib";
 import fontkit from "@pdf-lib/fontkit";
-import { loadGoogleFontTTF } from "./font-loader";
+import { loadGoogleFontTTF } from "./common/font-loader";
 import type { FontSet, LayoutInfo, PDFConfig } from "../types/PdfProps";
-import type { ResumeData } from "../types/ResumeData";
+import type { Experience, ResumeData } from "../types/ResumeData";
+import { Logger } from "./common/logger";
 
 // Utility functions
 class PDFTextUtils {
@@ -139,48 +140,55 @@ class HeaderSection {
   ) {}
 
   draw(data: Pick<ResumeData, "personalInfo" | "contactInfo">): number {
-    let currentY = this.layout.height - this.config.margins.top;
-    const { leftColumnX } = this.layout;
-    const maxWidth =
-      this.layout.width - this.config.margins.left - this.config.margins.right;
+    try {
+      let currentY = this.layout.height - this.config.margins.top;
+      const { leftColumnX } = this.layout;
+      const maxWidth =
+        this.layout.width -
+        this.config.margins.left -
+        this.config.margins.right;
 
-    // Name
-    this.page.drawText(data.personalInfo.name, {
-      x: leftColumnX,
-      y: currentY,
-      size: this.config.fontSizes.name,
-      font: this.fonts.bold,
-      color: this.config.colors.name,
-      maxWidth,
-    });
-    currentY -= this.config.spacing.nameToTitle;
+      // Name
+      this.page.drawText(data.personalInfo.name, {
+        x: leftColumnX,
+        y: currentY,
+        size: this.config.fontSizes.name,
+        font: this.fonts.bold,
+        color: this.config.colors.name,
+        maxWidth,
+      });
+      currentY -= this.config.spacing.nameToTitle;
 
-    // Title
-    this.page.drawText(data.personalInfo.title, {
-      x: leftColumnX,
-      y: currentY,
-      size: this.config.fontSizes.title,
-      font: this.fonts.regular,
-      color: this.config.colors.title,
-      maxWidth,
-    });
-    currentY -= this.config.spacing.titleToContact;
+      // Title
+      this.page.drawText(data.personalInfo.title, {
+        x: leftColumnX,
+        y: currentY,
+        size: this.config.fontSizes.title,
+        font: this.fonts.regular,
+        color: this.config.colors.title,
+        maxWidth,
+      });
+      currentY -= this.config.spacing.titleToContact;
 
-    // Contact info
-    const contactInfo = data.contactInfo.join("  |  ");
-    this.page.drawText(contactInfo, {
-      x: leftColumnX,
-      y: currentY,
-      size: this.config.fontSizes.contactInfo,
-      font: this.fonts.regular,
-      color: this.config.colors.contactInfo,
-      maxWidth,
-      lineHeight: this.config.fontSizes.contactInfo,
-      wordBreaks: [" "],
-    });
-    currentY -= this.config.spacing.contactItem;
+      // Contact info
+      const contactInfo = data.contactInfo.join("  |  ");
+      this.page.drawText(contactInfo, {
+        x: leftColumnX,
+        y: currentY,
+        size: this.config.fontSizes.contactInfo,
+        font: this.fonts.regular,
+        color: this.config.colors.contactInfo,
+        maxWidth,
+        lineHeight: this.config.fontSizes.contactInfo,
+        wordBreaks: [" "],
+      });
+      currentY -= this.config.spacing.contactItem;
 
-    return currentY;
+      return currentY;
+    } catch (error) {
+      Logger.error("Failed to fetch user data", error, {});
+      throw error;
+    }
   }
 }
 
@@ -315,6 +323,7 @@ export class PDFGenerator {
       config,
       this.layout
     );
+
     const experienceSection = new ExperienceSection(
       page,
       this.fonts,

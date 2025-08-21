@@ -1,5 +1,11 @@
 import { PDFFont, rgb } from "pdf-lib";
 
+export interface SectionConfig {
+  fontSizes: {
+    header: number;
+  };
+}
+
 // Types
 export interface PDFConfig {
   pageSize: [number, number];

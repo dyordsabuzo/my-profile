@@ -30,6 +30,7 @@ export interface FontStyles {
   large: { size: number; color: ReturnType<typeof rgb> };
   medium: { size: number; color: ReturnType<typeof rgb> };
   normal: { size: number; color: ReturnType<typeof rgb> };
+  base: { size: number; color: ReturnType<typeof rgb> };
   small: { size: number; color: ReturnType<typeof rgb> };
 }
 

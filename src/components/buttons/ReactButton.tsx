@@ -1,16 +1,15 @@
 import { buildResumePDF } from "../../utils/pdfbuilders/pdf-builder-standard";
 import { Logger } from "../../utils/common/logger";
-import { basic, contactInfo, experiences } from "../../config/cv.json";
+import cv from "../../config/cv.json";
 
 export default function ReactButton() {
   const handleClick = async () => {
     try {
       const resumeData = {
+        ...cv,
         personalInfo: {
-          ...basic,
+          ...cv.basic,
         },
-        contactInfo,
-        experiences,
       };
       const pdfDoc = await buildResumePDF(resumeData);
       const pdfBytes = await pdfDoc.save();

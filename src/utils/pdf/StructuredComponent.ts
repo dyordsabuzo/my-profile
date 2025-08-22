@@ -101,7 +101,8 @@ export class StructuredComponent extends PDFComponent {
 
         currentY -= style.size + lineSpacing + 4;
         if (Array.isArray(details)) {
-          const detailsFontSize = style.size - 1;
+          const detailsFontSize = style.size - 2;
+          const lineHeight = detailsFontSize + 2;
           details.forEach((item) => {
             // Draw bullet
             page.drawText("•", {
@@ -118,7 +119,7 @@ export class StructuredComponent extends PDFComponent {
               font,
               detailsFontSize,
               bounds.width - indent,
-              detailsFontSize + 1
+              lineHeight
             );
 
             // Draw item text
@@ -129,7 +130,7 @@ export class StructuredComponent extends PDFComponent {
               font,
               color: style.color,
               maxWidth: bounds.width - indent,
-              lineHeight: detailsFontSize + 1,
+              lineHeight,
               wordBreaks: [" "],
             });
 
@@ -137,7 +138,7 @@ export class StructuredComponent extends PDFComponent {
           });
 
           // Draw line if enabled
-          if (index !== details.length - 1) {
+          if (index !== objects.length - 1) {
             const lineY = currentY + 4;
             page.drawLine({
               start: { x: bounds.x, y: lineY },

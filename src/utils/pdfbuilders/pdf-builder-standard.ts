@@ -9,15 +9,16 @@ import { MultiText } from "../pdf/MultitextComponent.js";
 import { SectionHeader } from "../pdf/SectionComponent.js";
 import { Text } from "../pdf/TextComponent.js";
 import { StructuredText } from "../pdf/StructuredComponent.js";
+import { Logger } from "../common/logger.js";
 
 // Define your layout
 const layout: PDFLayout = {
   pageSize: [595, 842], // A4 size
   margins: {
-    top: 30,
-    bottom: 30,
-    left: 30,
-    right: 30,
+    top: 40,
+    bottom: 40,
+    left: 40,
+    right: 40,
   },
   gaps: {
     sectionToSection: 10,
@@ -40,7 +41,7 @@ const layout: PDFLayout = {
   columns: {
     leftWidth: 0.7, // 65% for left column
     rightWidth: 0.3, // 30% for right column
-    gap: 15, // 25pt gap between columns
+    gap: 12, // 25pt gap between columns
   },
 };
 
@@ -49,7 +50,8 @@ const styles: FontStyles = {
   large: { size: 18, color: rgb(0.1, 0.1, 0.1) },
   medium: { size: 12, color: rgb(0.2, 0.2, 0.2) },
   normal: { size: 10, color: rgb(0.1, 0.1, 0.1) },
-  small: { size: 8, color: rgb(0.4, 0.4, 0.4) },
+  base: { size: 9, color: rgb(0.1, 0.1, 0.1) },
+  small: { size: 8, color: rgb(0.1, 0.1, 0.1) },
 };
 
 // Build your resume PDF
@@ -141,15 +143,21 @@ export async function buildResumePDF(resumeData: any) {
     )
     .addComponent(
       List("achievements", "right", 2, {
-        fontSize: "normal",
+        fontSize: "small",
         bulletStyle: "•",
-        itemSpacing: 8,
+        itemSpacing: 4,
         spacing: { after: 20 },
         showDashLine: true,
         lineColor: rgb(0.8, 0.8, 0.8),
         lineThickness: 0.5,
       })
     );
+
+  const filteredExperiences = resumeData.experiences.filter(
+    (e) => !(e.exclude ?? false)
+  );
+
+  Logger.debug(filteredExperiences);
 
   // Prepare your data
   const data = {
@@ -162,16 +170,11 @@ export async function buildResumePDF(resumeData: any) {
     "summary-header": "SUMMARY",
     summary: resumeData.personalInfo.summary,
     "experience-header": "EXPERIENCE",
-    experiences: resumeData.experiences,
-    // "experience-details": resumeData.experience.map(
-    //   (exp) =>
-    //     `${exp.position}\n${exp.company} | ${
-    //       exp.duration
-    //     }\n${exp.achievements.join("\n")}`
-    // ),
+
+    experiences: filteredExperiences,
 
     // Right section data
-    "skills-header": "TECHNICAL SKILLS",
+    "skills-header": "SKILLS",
     skills: resumeData.skills,
     "achievements-header": "ACHIEVEMENTS",
     achievements: resumeData.achievements,

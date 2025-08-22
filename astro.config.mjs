@@ -8,7 +8,8 @@ import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 
 export default defineConfig({
-  site: "https://astro-resume-theme.netlify.app",
+  site: "https://dyordsabuzo.github.io",
+  base: "/my-profile",
   integrations: [
     tailwind(),
     icon(),

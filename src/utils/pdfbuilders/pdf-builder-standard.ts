@@ -176,6 +176,7 @@ export async function buildResumePDF(resumeData: any) {
     // Right section data
     "skills-header": "SKILLS",
     skills: resumeData.skills,
+
     "achievements-header": "ACHIEVEMENTS",
     achievements: resumeData.achievements,
   };

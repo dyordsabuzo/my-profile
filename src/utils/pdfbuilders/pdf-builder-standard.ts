@@ -3,13 +3,13 @@ import {
   type PDFLayout,
   type FontStyles,
 } from "../pdf/PdfModule.js";
-import { lineSplit, rgb } from "pdf-lib";
+import { rgb } from "pdf-lib";
 import { List } from "../pdf/ListComponent.js";
-import { MultiText } from "../pdf/MultitextComponent.js";
-import { SectionHeader } from "../pdf/SectionComponent.js";
-import { Text } from "../pdf/TextComponent.js";
-import { StructuredText } from "../pdf/StructuredComponent.js";
-import { Logger } from "../common/logger.js";
+// import { MultiText } from "../pdf/MultitextComponent.js";
+import { SectionHeader } from "../pdf/SectionComponent";
+import { Text } from "../pdf/TextComponent";
+import { StructuredText } from "../pdf/StructuredComponent";
+import { Logger } from "../common/logger";
 
 // Define your layout
 const layout: PDFLayout = {
@@ -154,7 +154,7 @@ export async function buildResumePDF(resumeData: any) {
     );
 
   const filteredExperiences = resumeData.experiences.filter(
-    (e) => !(e.exclude ?? false)
+    (e: any) => !(e.exclude ?? false)
   );
 
   Logger.debug(filteredExperiences);

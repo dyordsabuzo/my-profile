@@ -2,13 +2,13 @@ import {
   ModularPDFBuilder,
   type PDFLayout,
   type FontStyles,
-} from "../pdf/PdfModule.js";
-import { lineSplit, rgb } from "pdf-lib";
-import { List } from "../pdf/ListComponent.js";
-import { MultiText } from "../pdf/MultitextComponent.js";
-import { SectionHeader } from "../pdf/SectionComponent.js";
-import { Text } from "../pdf/TextComponent.js";
-import { StructuredText } from "../pdf/StructuredComponent.js";
+} from "../pdf/PdfModule";
+import { rgb } from "pdf-lib";
+import { List } from "../pdf/ListComponent";
+// import { MultiText } from "../pdf/MultitextComponent";
+import { SectionHeader } from "../pdf/SectionComponent";
+import { Text } from "../pdf/TextComponent";
+import { StructuredText } from "../pdf/StructuredComponent";
 
 // Define your layout
 const layout: PDFLayout = {
@@ -49,6 +49,7 @@ const styles: FontStyles = {
   large: { size: 18, color: rgb(0.1, 0.1, 0.1) },
   medium: { size: 12, color: rgb(0.2, 0.2, 0.2) },
   normal: { size: 10, color: rgb(0.1, 0.1, 0.1) },
+  base: { size: 9, color: rgb(0.1, 0.1, 0.1) },
   small: { size: 8, color: rgb(0.4, 0.4, 0.4) },
 };
 
@@ -164,7 +165,7 @@ export async function buildResumePDF(resumeData: any) {
     "experience-header": "EXPERIENCE",
     experience: resumeData.experience,
     "experience-details": resumeData.experience.map(
-      (exp) =>
+      (exp: any) =>
         `${exp.position}\n${exp.company} | ${
           exp.duration
         }\n${exp.achievements.join("\n")}`

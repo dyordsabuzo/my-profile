@@ -37,6 +37,7 @@ export class DividerComponent extends PDFComponent {
     _data?: any
   ): number {
     return Logger.withTryCatchSync(() => {
+      Logger.info(fonts, styles);
       let currentY = bounds.currentY;
 
       if (this.config.spacing?.before) {

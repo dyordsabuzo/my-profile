@@ -1,22 +1,8 @@
 ---
 import { skills } from '../../../config/cv.json';
-import CardListSection from './CardListSection.astro';
+import SkillItem from './SkillItem.astro';
 
-const allSkills = [
-  ...skills.programmingLanguages.items,
-  ...skills.frameworks.items,
-  ...skills.cloud.items,
-  ...skills.cicd.items,
-  ...skills.tools.items,
-];
 
-interface Item {
-  name: string;
-  icon: string;
-  iconSuffix?: string;
-  level: string;
-  category: string;
-}
 
 const skillCategories = {
   [skills.programmingLanguages.name]: skills.programmingLanguages.items,
@@ -26,7 +12,7 @@ const skillCategories = {
   [skills.tools.name]: skills.tools.items,
 };
 
-const display = false;
+// const display = false;
 ---
 
 <section class="py-14 bg-background">
@@ -37,41 +23,11 @@ const display = false;
 
     <ul class="space-y-4">
       {Object.entries(skillCategories).map(([categoryName, categorySkills]) => (
-        <li class="p-5 bg-background-offset shadow-lg rounded-xl border border-default">
-          <div class="flex flex-col sm:flex-row md:flex-row items-start">
-            <div class="mb-2 sm:mb-2 sm:w-44 md:min-w-48">
-              <h3 class="text-base font-semibold">{categoryName}</h3>
-            </div>
-            <div class="ml-2 flex flex-row flex-wrap gap-1">
-              {categorySkills.map((skill:Item) => (
-                <div class="flex items-center gap-2 p-2 bg-background-offset shadow-lg rounded-md border border-default">
-                  <img
-                    src={`https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.17.0/icons/${skill.icon}/${skill.icon}-${skill.iconSuffix ?? "original"}.svg`}
-                    alt={`${skill.name} icon`}
-                    class="w-6 h-6 flex-shrink-0"
-                    loading="lazy"
-                    onerror={`this.src='https://via.placeholder.com/32/4F46E5/white?text=${skill.name.charAt(0)}'`}
-                  />
-                  <div class="flex flex-grow min-w-20">
-                    <h4 class="text-sm truncate">
-                      {skill.name}
-                    </h4>
-                    {display && (
-                        <div class="flex items-center gap-1 mt-1">
-                            <span class={`px-2 py-0.5 text-xs font-medium rounded-full ${
-                                skill.level === 'Expert' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
-                                skill.level === 'Advanced' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' :
-                                'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
-                            }`}>
-                                {skill.level}
-                            </span>
-                        </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-        </li>
+      <SkillItem
+        key={categoryName}
+        categoryName={categoryName}
+        categorySkills={categorySkills}
+      />
       ))}
     </ul>
   </div>

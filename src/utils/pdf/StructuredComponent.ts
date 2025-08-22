@@ -54,7 +54,7 @@ export class StructuredComponent extends PDFComponent {
       const indent = this.options.indent || 10;
 
       // determine level of data by length of fieldOrder
-      const level = this.options.fieldOrder.length;
+      // const level = this.options.fieldOrder.length;
 
       objects.forEach((object, index) => {
         const header = object[this.options.fieldOrder[0]];

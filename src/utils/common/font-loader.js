@@ -1,4 +1,4 @@
-import fontkit from "@pdf-lib/fontkit";
+// import fontkit from "@pdf-lib/fontkit";
 
 // Manual mapping of popular Google Fonts to their TTF URLs
 const POPULAR_GOOGLE_FONTS = {

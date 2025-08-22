@@ -13,7 +13,7 @@ export default function ReactButton() {
       };
       const pdfDoc = await buildResumePDF(resumeData);
       const pdfBytes = await pdfDoc.save();
-      const blob = new Blob([pdfBytes], { type: "application/pdf" });
+      const blob = new Blob([pdfBytes as any], { type: "application/pdf" });
       const pdfUrl = URL.createObjectURL(blob);
       const newTab = window.open(pdfUrl, "_blank");
 

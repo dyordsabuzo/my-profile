@@ -1,15 +1,29 @@
 import { buildResumePDF } from "../../utils/pdfbuilders/pdf-builder-standard";
 import { Logger } from "../../utils/common/logger";
 import cv from "../../config/cv.json";
+import { companies } from "../../config/companies.json";
+import { projects } from "../../config/projects.json";
 
-export default function ReactButton() {
+export default function CustomButton() {
   const handleClick = async () => {
     try {
+      const experiences = cv.experiences.map((e) => {
+        return {
+          ...e,
+          overview:
+            companies.find((c) => c.name === e.sub_title)?.overview || "",
+        };
+      });
+
+      Logger.info("Experience:", experiences);
+
       const resumeData = {
         ...cv,
+        experiences,
         personalInfo: {
           ...cv.basic,
         },
+        projects,
       };
       const pdfDoc = await buildResumePDF(resumeData);
       const pdfBytes = await pdfDoc.save();

@@ -1,15 +1,17 @@
 ---
 import CardListSection from "./CardListSection.astro";
-import { experiences, companies } from '../../../config/cv.json';
+import { experiences } from '../../../config/cv.json';
+import { companies } from '../../../config/companies.json';
 
 const updatedExperiences = experiences.map((item) => {
-  const photo = companies.find((company) => company.name === item.sub_title)?.logo;
+  const {logo: photo, overview} = companies.find((company) => company.name === item.sub_title);
   return {
     ...item,
-    photo
+    photo,
+    overview,
   };
 });
 
 ---
 
-<CardListSection title="Experience" items={updatedExperiences} />
+<CardListSection title="Experience" items={updatedExperiences.filter((item) => !item.exclude)} />

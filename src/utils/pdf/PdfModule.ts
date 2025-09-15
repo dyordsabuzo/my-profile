@@ -23,7 +23,11 @@ export interface PDFLayout {
     string,
     { height: number; backgroundColor: ReturnType<typeof rgb> }
   >;
-  gaps: Record<string, number>;
+  gaps: {
+    sectionToSection: Record<string, number>;
+    headerToContent: number;
+  };
+  lineThickness?: Record<string, number>;
 }
 
 export interface FontStyles {
@@ -32,6 +36,7 @@ export interface FontStyles {
   normal: { size: number; color: ReturnType<typeof rgb> };
   base: { size: number; color: ReturnType<typeof rgb> };
   small: { size: number; color: ReturnType<typeof rgb> };
+  xsmall: { size: number; color: ReturnType<typeof rgb> };
 }
 
 export interface SectionBounds {

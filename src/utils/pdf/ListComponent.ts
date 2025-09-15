@@ -83,7 +83,7 @@ export class ListComponent extends PDFComponent {
 
         // Draw line if enabled
         if (this.options.showDashLine && index !== items.length - 1) {
-          const lineY = currentY - textHeight + 6;
+          const lineY = currentY - textHeight + this.options.itemSpacing / 2;
           page.drawLine({
             start: { x: bounds.x, y: lineY },
             end: { x: bounds.x + bounds.width - 10, y: lineY },

@@ -19,7 +19,7 @@ export class SectionHeaderComponent extends PDFComponent {
       lineColor?: ReturnType<typeof rgb>;
       lineThickness?: number;
       spacing?: { before?: number; after?: number };
-    } = { fontSize: "medium", showLine: true, lineThickness: 1.5 }
+    } = { fontSize: "medium", showLine: true, lineThickness: 1 }
   ) {
     super({
       id,
@@ -62,7 +62,7 @@ export class SectionHeaderComponent extends PDFComponent {
           start: { x: bounds.x, y: lineY },
           end: { x: bounds.x + bounds.width - 10, y: lineY },
           color: this.options.lineColor || style.color,
-          thickness: this.options.lineThickness || 1.5,
+          thickness: this.options.lineThickness || 1,
         });
       }
 

@@ -2,14 +2,14 @@
 import { Image } from 'astro:assets';
 import heroImage from '../../assets/paul_smith.png';
 import { basic } from '../../config/cv.json';
-import ReactButton from '../buttons/ReactButton';
+import CustomButton from '../buttons/CustomButton';
 ---
 
 <section class="py-5 px-4 sm:py-10 lg:py-16">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div class="grid items-center grid-cols-1 lg:grid-cols-2">
             <div class="relative flex justify-center">
-                {basic?.photo ? <img src={basic.photo} class="rounded-full border border-2 border-white" alt="Astro Resume Theme - George Abuzo" /> :
+                {basic?.photo ? <img src={basic.photo} class="rounded-full border-2 border-white" alt="Astro Resume Theme - George Abuzo" /> :
                     <Image class="w-full md:max-w-md lg:max-w-md"
                         src={heroImage}
                         loading="eager"
@@ -35,7 +35,7 @@ import ReactButton from '../buttons/ReactButton';
                             bg-primary hover:bg-secondary focus:bg-secondary" role="button">
                         Download CV
                     </a> -->
-                    <ReactButton client:load />
+                    <CustomButton client:load />
                 </div>
             </div>
         </div>

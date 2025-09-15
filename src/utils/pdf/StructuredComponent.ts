@@ -18,12 +18,19 @@ export class StructuredComponent extends PDFComponent {
       lineSpacing?: number;
       isBold?: boolean;
       spacing?: { before?: number; after?: number };
-      fieldOrder?: string[];
       indent?: number;
       itemSpacing?: number;
       lineColor?: ReturnType<typeof rgb>;
       lineThickness?: number;
-    } = { fontSize: "normal", lineSpacing: 5, fieldOrder: [] }
+      structure?: {
+        header?: string;
+        subheader?: string;
+        dateinfo?: string;
+        location?: string;
+        overview?: string;
+        details?: string;
+      };
+    } = { fontSize: "normal", lineSpacing: 5 }
   ) {
     super({
       id,
@@ -50,33 +57,51 @@ export class StructuredComponent extends PDFComponent {
       const font = this.options.isBold ? fonts.bold : fonts.regular;
       const style = styles[this.options.fontSize];
       const lineSpacing = this.options.lineSpacing || 5;
-      const itemSpacing = this.options.itemSpacing || 1;
+      const itemSpacing = this.options.itemSpacing || 2;
       const indent = this.options.indent || 10;
 
-      // determine level of data by length of fieldOrder
-      // const level = this.options.fieldOrder.length;
-
       objects.forEach((object, index) => {
-        const header = object[this.options.fieldOrder[0]];
-        const subheader = object[this.options.fieldOrder[1]];
-        const subinfo = object[this.options.fieldOrder[2]];
-        const details = object[this.options.fieldOrder[3]];
+        const structure = this.options.structure;
+        const header = structure.header ? object[structure.header] : null;
+        const subheader = structure.subheader
+          ? object[structure.subheader]
+          : null;
 
-        Logger.debug(`Rendering structured component with header: ${header}`);
+        const dateinfo = structure.dateinfo ? object[structure.dateinfo] : null;
+        const location = structure.location ? object[structure.location] : null;
+        const overview = structure.overview ? object[structure.overview] : null;
+        const details = structure.details ? object[structure.details] : null;
 
-        if (typeof header === "string") {
+        if (header && typeof header === "string") {
           page.drawText(header, {
             x: bounds.x,
             y: currentY,
-            size: style.size + 2,
+            size: style.size,
             font,
             color: style.color,
             maxWidth: bounds.width,
           });
         }
 
-        currentY -= style.size + lineSpacing + 2;
-        if (typeof subheader === "string") {
+        if (dateinfo && typeof dateinfo === "string") {
+          const dateinfosize =
+            this.options.fontSize !== "base" ? style.size - 2 : style.size - 1;
+          const dateinfowidth = font.widthOfTextAtSize(dateinfo, dateinfosize);
+
+          page.drawText(dateinfo, {
+            x: bounds.x + bounds.width - dateinfowidth - 10,
+            y: currentY,
+            size: dateinfosize,
+            font,
+            color: style.color,
+          });
+        }
+
+        if (header || dateinfo) {
+          currentY -= style.size + lineSpacing + 2;
+        }
+
+        if (subheader && typeof subheader === "string") {
           page.drawText(subheader, {
             x: bounds.x,
             y: currentY,
@@ -87,22 +112,52 @@ export class StructuredComponent extends PDFComponent {
           });
         }
 
-        currentY -= style.size + lineSpacing;
-        if (typeof subinfo === "string") {
-          page.drawText(subinfo, {
-            x: bounds.x,
+        if (location && typeof location === "string") {
+          const locationsize =
+            this.options.fontSize !== "base" ? style.size - 2 : style.size - 1;
+          const locationwidth = font.widthOfTextAtSize(location, locationsize);
+
+          page.drawText(location, {
+            x: bounds.x + bounds.width - locationwidth - 10,
             y: currentY,
-            size: style.size - 2,
+            size: locationsize,
             font,
             color: style.color,
-            maxWidth: bounds.width,
           });
         }
 
-        currentY -= style.size + lineSpacing + 4;
+        if (subheader || location) {
+          currentY -= style.size + lineSpacing;
+        }
+
+        const detailsFontSize =
+          this.options.fontSize !== "base" ? style.size - 2 : style.size - 1;
+        const lineHeight = detailsFontSize + 2;
+        if (overview && typeof overview === "string") {
+          const textHeight = this.getWrappedTextDimension(
+            overview,
+            font,
+            detailsFontSize,
+            bounds.width,
+            lineHeight
+          );
+
+          // Draw item text
+          page.drawText(overview, {
+            x: bounds.x,
+            y: currentY,
+            size: detailsFontSize,
+            font,
+            color: style.color,
+            maxWidth: bounds.width,
+            lineHeight,
+            wordBreaks: [" "],
+          });
+
+          currentY -= textHeight;
+        }
+
         if (Array.isArray(details)) {
-          const detailsFontSize = style.size - 2;
-          const lineHeight = detailsFontSize + 2;
           details.forEach((item) => {
             // Draw bullet
             page.drawText("•", {
@@ -114,7 +169,7 @@ export class StructuredComponent extends PDFComponent {
             });
 
             // Calculate text height for wrapped text
-            const textHeight = this.getWrappedTextHeight(
+            const textHeight = this.getWrappedTextDimension(
               item,
               font,
               detailsFontSize,
@@ -134,20 +189,20 @@ export class StructuredComponent extends PDFComponent {
               wordBreaks: [" "],
             });
 
-            currentY -= textHeight + itemSpacing;
+            currentY -= textHeight;
           });
+        }
 
-          // Draw line if enabled
-          if (index !== objects.length - 1) {
-            const lineY = currentY + 4;
-            page.drawLine({
-              start: { x: bounds.x, y: lineY },
-              end: { x: bounds.x + bounds.width - 10, y: lineY },
-              color: this.options.lineColor || style.color,
-              thickness: this.options.lineThickness || 0.5,
-              dashArray: [1, 2],
-            });
-          }
+        // Draw line if enabled
+        if (index !== objects.length - 1) {
+          const lineY = currentY + itemSpacing;
+          page.drawLine({
+            start: { x: bounds.x, y: lineY },
+            end: { x: bounds.x + bounds.width - 10, y: lineY },
+            color: this.options.lineColor || style.color,
+            thickness: this.options.lineThickness || 0.5,
+            dashArray: [1, 2],
+          });
         }
 
         currentY -= style.size + lineSpacing;
@@ -174,9 +229,9 @@ export class StructuredComponent extends PDFComponent {
       //   currentY -= style.size + lineSpacing + textHeight;
       // });
 
-      // if (this.config.spacing?.after) {
-      //   currentY -= this.config.spacing.after;
-      // }
+      if (this.config.spacing?.after) {
+        currentY -= this.config.spacing.after;
+      }
 
       Logger.debug(`Multi-text component "${this.config.id}" rendered`, {
         section: this.config.section,
@@ -188,7 +243,7 @@ export class StructuredComponent extends PDFComponent {
     }, `rendering multi-text component ${this.config.id}`);
   }
 
-  private getWrappedTextHeight(
+  private getWrappedTextDimension(
     text: string,
     font: PDFFont,
     size: number,

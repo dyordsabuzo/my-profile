@@ -30,7 +30,7 @@ const { title, sub_title, years, location, overview, details, photo } = Astro.pr
         }
     </div>
   </div>
-  {overview && <p class="mt-4 text-offset leading-relaxed">{overview}</p>}
+  {overview && <p class="mt-4 text-sm text-offset leading-relaxed">{overview}</p>}
   <ul class="list-disc pl-4 space-y-1 text-gray-500 text-sm">
     {details?.map((item: string) => (
         <li class="mt-4 text-offset leading-relaxed">{item}</li>

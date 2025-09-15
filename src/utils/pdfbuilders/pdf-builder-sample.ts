@@ -20,7 +20,10 @@ const layout: PDFLayout = {
     right: 30,
   },
   gaps: {
-    sectionToSection: 20,
+    sectionToSection: {
+      right: 20,
+      left: 20,
+    },
     headerToContent: 6,
   },
   sections: {
@@ -51,6 +54,7 @@ const styles: FontStyles = {
   normal: { size: 10, color: rgb(0.1, 0.1, 0.1) },
   base: { size: 9, color: rgb(0.1, 0.1, 0.1) },
   small: { size: 8, color: rgb(0.4, 0.4, 0.4) },
+  xsmall: { size: 7, color: rgb(0.4, 0.4, 0.4) },
 };
 
 // Build your resume PDF

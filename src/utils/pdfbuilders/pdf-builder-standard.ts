@@ -2,26 +2,29 @@ import {
   ModularPDFBuilder,
   type PDFLayout,
   type FontStyles,
-} from "../pdf/PdfModule.js";
+} from "../pdf/PdfModule";
 import { rgb } from "pdf-lib";
-import { List } from "../pdf/ListComponent.js";
-// import { MultiText } from "../pdf/MultitextComponent.js";
+import { List } from "../pdf/ListComponent";
 import { SectionHeader } from "../pdf/SectionComponent";
 import { Text } from "../pdf/TextComponent";
 import { StructuredText } from "../pdf/StructuredComponent";
 import { Logger } from "../common/logger";
 
 // Define your layout
+const generalMargin = 50;
 const layout: PDFLayout = {
   pageSize: [595, 842], // A4 size
   margins: {
-    top: 40,
-    bottom: 40,
-    left: 40,
-    right: 40,
+    top: generalMargin,
+    bottom: generalMargin,
+    left: generalMargin,
+    right: generalMargin,
   },
   gaps: {
-    sectionToSection: 10,
+    sectionToSection: {
+      left: 12,
+      right: 9,
+    },
     headerToContent: 6,
   },
   sections: {
@@ -52,6 +55,7 @@ const styles: FontStyles = {
   normal: { size: 10, color: rgb(0.1, 0.1, 0.1) },
   base: { size: 9, color: rgb(0.1, 0.1, 0.1) },
   small: { size: 8, color: rgb(0.1, 0.1, 0.1) },
+  xsmall: { size: 7, color: rgb(0.1, 0.1, 0.1) },
 };
 
 // Build your resume PDF
@@ -70,13 +74,13 @@ export async function buildResumePDF(resumeData: any) {
     )
     .addComponent(
       Text("title", "header", 2, {
-        fontSize: "medium",
+        fontSize: "normal",
         spacing: { after: 2 },
       })
     )
     .addComponent(
       Text("contact", "header", 3, {
-        fontSize: "small",
+        fontSize: "xsmall",
         spacing: { after: 2 },
       })
     );
@@ -93,7 +97,7 @@ export async function buildResumePDF(resumeData: any) {
     .addComponent(
       Text("summary", "left", 2, {
         fontSize: "small",
-        spacing: { after: layout.gaps.sectionToSection ?? 20 },
+        spacing: { after: layout.gaps.sectionToSection.left ?? 20 },
         addTextHeight: true,
       })
     );
@@ -109,31 +113,49 @@ export async function buildResumePDF(resumeData: any) {
     .addComponent(
       StructuredText("experiences", "left", 4, {
         fontSize: "normal",
-        spacing: { after: layout.gaps.sectionToSection ?? 20 },
+        spacing: { after: layout.gaps.sectionToSection.left ?? 20 },
         lineSpacing: 1,
-        fieldOrder: ["title", "sub_title", "years", "details"],
+        structure: {
+          header: "title",
+          subheader: "sub_title",
+          dateinfo: "years",
+          details: "details",
+          location: "location",
+          overview: "overview",
+        },
         lineColor: rgb(0.8, 0.8, 0.8),
         lineThickness: 0.5,
+        drawDashLine: true,
       })
     );
 
-  // RIGHT SECTION (Sidebar)
   builder
     .addComponent(
-      SectionHeader("skills-header", "right", 3, {
+      SectionHeader("education-header", "left", 5, {
         fontSize: "medium",
         spacing: { after: layout.gaps.headerToContent ?? 10 },
         showLine: true,
       })
     )
     .addComponent(
-      List("skills", "right", 5, {
-        fontSize: "normal",
-        bulletStyle: "•",
-        itemSpacing: 2,
-        spacing: { after: layout.gaps.sectionToSection ?? 20 },
+      StructuredText("education", "left", 6, {
+        fontSize: "base",
+        spacing: { after: layout.gaps.sectionToSection.left ?? 20 },
+        lineSpacing: 1,
+        structure: {
+          header: "title",
+          subheader: "sub_title",
+          dateinfo: "years",
+          location: "location",
+        },
+        lineColor: rgb(0.8, 0.8, 0.8),
+        lineThickness: 0.5,
+        drawDashLine: true,
       })
-    )
+    );
+
+  // RIGHT SECTION (Sidebar)
+  builder
     .addComponent(
       SectionHeader("achievements-header", "right", 1, {
         fontSize: "medium",
@@ -145,11 +167,57 @@ export async function buildResumePDF(resumeData: any) {
       List("achievements", "right", 2, {
         fontSize: "small",
         bulletStyle: "•",
-        itemSpacing: 4,
-        spacing: { after: 20 },
+        itemSpacing: 8,
+        spacing: { after: layout.gaps.sectionToSection.right ?? 20 },
         showDashLine: true,
         lineColor: rgb(0.8, 0.8, 0.8),
         lineThickness: 0.5,
+      })
+    );
+
+  builder
+    .addComponent(
+      SectionHeader("skills-header", "right", 3, {
+        fontSize: "medium",
+        spacing: { after: layout.gaps.headerToContent ?? 10 },
+        showLine: true,
+      })
+    )
+    .addComponent(
+      StructuredText("skills", "right", 4, {
+        fontSize: "base",
+        spacing: { after: layout.gaps.sectionToSection.right ?? 20 },
+        lineSpacing: 1,
+        structure: {
+          subheader: "sub_title",
+          overview: "overview",
+        },
+        lineColor: rgb(0.8, 0.8, 0.8),
+        lineThickness: 0.5,
+        drawDashLine: true,
+      })
+    );
+
+  builder
+    .addComponent(
+      SectionHeader("projects-header", "right", 5, {
+        fontSize: "medium",
+        spacing: { after: layout.gaps.headerToContent ?? 10 },
+        showLine: true,
+      })
+    )
+    .addComponent(
+      StructuredText("projects", "right", 6, {
+        fontSize: "base",
+        spacing: { after: layout.gaps.sectionToSection.right ?? 20 },
+        lineSpacing: 1,
+        structure: {
+          subheader: "sub_title",
+          overview: "overview",
+        },
+        lineColor: rgb(0.8, 0.8, 0.8),
+        lineThickness: 0.5,
+        drawDashLine: true,
       })
     );
 
@@ -157,14 +225,41 @@ export async function buildResumePDF(resumeData: any) {
     (e: any) => !(e.exclude ?? false)
   );
 
-  Logger.debug(filteredExperiences);
+  const formattedSkills = [];
+  Object.values(resumeData.skills).forEach((value) => {
+    const { name, items } = value as { name: string; items: any[] };
+
+    formattedSkills.push({
+      sub_title: name,
+      overview: items
+        .filter((item) => !item.exclude)
+        .map((item) => item.name)
+        .join(" | "),
+    });
+  });
+
+  const formattedProjects = resumeData.projects.map((project) => {
+    return {
+      sub_title: project.type,
+      overview: `${project.title} | ${project.link}`,
+    };
+  });
+
+  Logger.debug("Data", {
+    filteredExperiences,
+    formattedSkills,
+    formattedProjects,
+    ...resumeData.education,
+  });
 
   // Prepare your data
   const data = {
     // Header data
     name: resumeData.personalInfo.name,
     title: resumeData.personalInfo.title,
-    contact: resumeData.contactInfo.join(" | "),
+    contact: resumeData.contactInfo
+      .filter((item: string) => !item.includes("LinkedIn"))
+      .join(" | "),
 
     // Left section data
     "summary-header": "SUMMARY",
@@ -175,10 +270,16 @@ export async function buildResumePDF(resumeData: any) {
 
     // Right section data
     "skills-header": "SKILLS",
-    skills: resumeData.skills,
+    skills: formattedSkills,
 
     "achievements-header": "ACHIEVEMENTS",
     achievements: resumeData.achievements,
+
+    "projects-header": "PROJECTS",
+    projects: formattedProjects,
+
+    "education-header": "EDUCATION",
+    education: resumeData.education.filter((e: any) => !(e.exclude ?? false)),
   };
 
   return builder.build(data);

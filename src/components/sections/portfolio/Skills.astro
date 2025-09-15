@@ -2,17 +2,15 @@
 import { skills } from '../../../config/cv.json';
 import SkillItem from './SkillItem.astro';
 
+let skillCategories = {};
 
-
-const skillCategories = {
-  [skills.programmingLanguages.name]: skills.programmingLanguages.items,
-  [skills.frameworks.name]: skills.frameworks.items,
-  [skills.cloud.name]: skills.cloud.items,
-  [skills.cicd.name]: skills.cicd.items,
-  [skills.tools.name]: skills.tools.items,
-};
-
-// const display = false;
+Object.values(skills).forEach(value => {
+  const {name,items} = value;
+    skillCategories = {
+      ...skillCategories,
+      [name]: items
+    }
+});
 ---
 
 <section class="py-14 bg-background">

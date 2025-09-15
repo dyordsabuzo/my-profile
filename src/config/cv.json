@@ -11,27 +11,8 @@
     "Email: dyordsabuzo@gmail.com",
     "Phone: +61 434 509 188",
     "LinkedIn: linkedin.com/in/george-abuzo",
-    "GitHub: github.com/dyordsabuzo"
-  ],
-  "companies": [
-    {
-      "name": "Secure Code Warrior",
-      "logo": "https://media.licdn.com/dms/image/v2/D560BAQFWTru0kAwQPQ/company-logo_200_200/company-logo_200_200/0/1721407525341/secure_code_warrior_logo?e=1758758400&v=beta&t=TNmq1y8rvYfmzxZd_jMc38H3yHjn9RmSzExCyoLSDnc",
-      "overview": "Secure Code Warrior is a leading provider of security risk mitigating solutions for developers and organizations."
-    },
-    {
-      "name": "Bambora",
-      "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGa5eSlBLrZew/company-logo_200_200/company-logo_200_200/0/1630631561026/bambora_logo?e=1758758400&v=beta&t=gxzClsuOSFWCcuLhaGTkb7x0J1AJg4PW1AGQeZTRs4s",
-      "overview": "Bambora is a global payment processing company that offers a range of payment solutions for businesses and consumers."
-    },
-    {
-      "name": "Royal Melbourne Institute of Technology",
-      "logo": "https://media.licdn.com/dms/image/v2/D560BAQEGU1obJOmROQ/company-logo_200_200/company-logo_200_200/0/1688439184668/rmit_university_logo?e=1758758400&v=beta&t=DNbrStp1ODajYTLivj8UAjEKIdt21x_AL5jOqKB4XpQ"
-    },
-    {
-      "name": "University of the Philippines",
-      "logo": "https://media.licdn.com/dms/image/v2/C560BAQFhc7r3beFtvA/company-logo_200_200/company-logo_200_200/0/1672705537119/university_of_the_philippines_logo?e=1758758400&v=beta&t=txs1hM3gJ9yasyzhgCNDhr0FcANnK_R2GcmxIm7vta8"
-    }
+    "GitHub: github.com/dyordsabuzo",
+    "Profile: https://dyordsabuzo.github.io/my-profile"
   ],
   "experiences": [
     {
@@ -49,6 +30,14 @@
         "organizational hierarchy",
         "Security vulnerability fixes"
       ],
+      "technologies": [
+        "AWS - Route53, Cloudfront, Load Balancers, ECS, EKS",
+        "Infrastructure as Code - Terraform, CloudFormation, Crossplane",
+        "MongoDB, NodeJS (React, Angular)",
+        "CI/CD - Jenkins, Github Actions, Azure Devops",
+        "K8S Management - ArgoCD",
+        "Monitoring - Datadog"
+      ],
       "exclude": true
     },
     {
@@ -57,10 +46,29 @@
       "years": "08/2019 - 08/2025",
       "location": "Sydney, Australia",
       "details": [
-        "Architecture, design, and support of the Secure Code Warrior cloud and infrastructure strategy (AWS)",
-        "Lead junior cloud engineers to understand, build & maintain infrastructure. Partners internally with tech-leads, product team and customer success to provide expert guidance on infrastructure, deployment and observability ofthe company's cloud environment.  Provide support to technical leads to enable a streamlined development environment for developers through best practices towards Continuous Integration & Continuous Delivery (CI/CD).",
+        "Architecture, design, and support of the Secure Code Warrior cloud and infrastructure strategy (AWS). Lead junior cloud engineers to understand, build & maintain infrastructure. Partners internally with tech-leads, product team and customer success to provide expert guidance on infrastructure, deployment and observability ofthe company's cloud environment.  Provide support to technical leads to enable a streamlined development environment for developers through best practices towards Continuous Integration & Continuous Delivery (CI/CD).",
         "Project management of all components for environment rollout & related infrastructure initiatives. Develop documentation for best practices for server infrastructure, virtualization, and cloud computing.  Review operations and business requirements for projects pertaining to Secure Code Warrior's cloud infrastructure with all project teams, management and client services groups.",
         "Provide support in ensuring security compliance - ISO20071, SOC2, GDPR"
+      ],
+      "responsibilities": [
+        "Architecture, design, and support of the Secure Code Warrior cloud and infrastructure strategy (AWS)",
+        "Lead junior cloud engineers to understand, build & maintain infrastructure",
+        "Direct interaction with internal stakeholders",
+        "Technical Advisor on solution deployment projects, including hands-on configuration of complex infrastructure components",
+        "Partners internally with tech-leads to provide expert guidance to on our cloud environment",
+        "Project management of all components for environment rollout & related infrastructure initiatives",
+        "Develop documentation for best practices for server infrastructure, virtualization, and cloud computing",
+        "Review operations and business requirements for projects pertaining to Secure Code Warrior's cloud infrastructure with all project teams, management and client services groups",
+        "Provide support to technical leads to enable a streamlined development environment for developers through best practices towards Continuous Integration & Continuous Delivery.",
+        "Provide support in ensuring security compliance - ISO20071, SOC2, GDPR"
+      ],
+      "technologies": [
+        "AWS - Route53, Cloudfront, Load Balancers, ECS, EKS",
+        "Infrastructure as Code - Terraform, CloudFormation, Crossplane",
+        "MongoDB, NodeJS (React, Angular)",
+        "CI/CD - Jenkins, Github Actions, Azure Devops",
+        "K8S Management - ArgoCD",
+        "Monitoring - Datadog"
       ]
     },
     {
@@ -74,13 +82,78 @@
         "Responsible in implementing CI/CD best practices and management of infrastructure as code using Bamboo for build and integration and Octopus for deployment with Bitbucket and Git for source control.  Infrastructure management and orchestration using Terraform and AWS CloudFormation Infrastructure stack include AWS VPCs, ELBs, EC2s, S3, Lambda, Autoscaling, ECR, ECS and networking and domain configration using Route 53 for endpoint accessibility",
         "Leads team of 3 Devops/Site Reliability Engineers, 3 Application Support Engineers and 3 Developers. Adapting Agile best practices - sprint planning for DevOps continues improvement and Kanban for BAU",
         "Provide support in ensuring payment systems compliance - PCI DSS"
+      ],
+      "responsibilities": [
+        "Team Lead for team responsible in application and infrastructure management and operational support for payments systems.",
+        "Monitoring of system availability and automation of DevOps processes to ensure resilient production systems. System monitoring and alerting - New Relic, Spunk, Site24x7, PagerDuty",
+        "Responsible with Issue investigation and resolution as well as production deployments.",
+        "Works with product, development and quality assurance teams on application deployment to production as well as on issues that require long term permanent fix and resolution.",
+        "Responsible in implementing CI/CD best practices and management of infrastructure as code. CI/CD experience using Bamboo for build and integration and Octopus for deployment, Bitbucket and Git for source control",
+        "Experience with orchestration using terraform and AWS CloudFormation with infrastructure stacks deployed across at least 3 VPCs (1 VPC per environment) with infrastructure as code stored in git. Implementation of scalable infrastructure using Auto Scaling.",
+        "Exposure to Route53 configuration of endpoint accessibility and working with development team to define requirements for containerization using Docker and AWS ECR and Kubernetes.",
+        "Exposure to Route53 configuration of endpoint accessibility and working with development team to define requirements for containerization using Docker and AWS ECR and Kubernetes.",
+        "Adapting Agile best practices - sprint planning for DevOps continues improvement and Kanban for BAU",
+        "Leveraging on open source tools to improve current CI/CD processes and developing automated tools and processes available for business users",
+        "Manages team of 3 Devops resources, 3 Application Support and 3 Developers"
+      ],
+      "technologies": [
+        "Domain knowledge: Payments Industry, Direct Entry processing",
+        "Technology: .Net Framework, IIS, Apache Tomcat, Python, Django, JQuery, Javascript, KendoUI Oracle, MS SQL Server, PL/SQL, XML/JSON, MongoDB",
+        "Windows, Linux (Centos)",
+        "Octopus, Bamboo, GitHub, Git, Docker",
+        "AWS – S3, EC2, VPC, Route53, API Gateway, Lambda, DynamoDB",
+        "Splunk, New Relic, Pager Duty"
+      ]
+    },
+    {
+      "title": "Business Systems Analyst",
+      "sub_title": "Cuscal",
+      "years": "10/2012 - 04/2016",
+      "location": "Sydney, Australia",
+      "details": [
+        "Responsible in application and infrastructure management and support for legacy, settlement and core reporting systems.  Provides Business and Application Support on use of Legacy systems for bulk payments and Low Value Settlement Systems (LVSS)",
+        "Issue investigation and resolution covering, but not limited to payment settlements and reconciliation, client transactional and operational data capture and reporting, card fraud and disputes.",
+        "Responsible in implementing changes to production and ensuring proper implementation verification.  Works with development teams to ensure proper implementation of changes."
+      ],
+      "responsibilities": [
+        "Adapting Agile best practices - sprint planning for DevOps continues improvement and Kanban for BAU",
+        "Provides Business and Application Support on use of Legacy systems for bulk payments and Low ValueSettlement Systems (LVSS).",
+        "Issue investigation and resolution covering, but not limited to payment settlements and reconciliation, clients’ transactional and operational data capture and reporting, card fraud and disputes.",
+        "Responsible in implementing changes to production and ensuring proper implementation verification. Works with development and quality assurance team on issues that require long term permanent fix and resolution."
+      ],
+      "technologies": [
+        "Secure Payments Exchange (SPX), SAP BusinessObjects Business Intelligence Platform 4, VMWare Service Manager",
+        "Goldmine Enterprise Edition",
+        "PERL, Oracle, MS SQL Server, PL/SQL, Unix/LINUX, Shell Scripting, Wintel, XML"
+      ]
+    },
+    {
+      "exclude": true,
+      "title": "Application Support Engineer",
+      "sub_title": "Bank of America Merrill Lynch",
+      "years": "08/2011 – 09/2012",
+      "location": "Singapore",
+      "details": [
+        "Trading Platform (Application and Infrastructure) management and support for Global Commodities business.",
+        "Provides Application Service Delivery (Level 1/Level 2 Technology) for Global Commodities Business platforms and   applications.",
+        "Involvement in 'Lights On/Business-As-Usual' service delivery to global trading desk and monitoring/management of day-to-day processes and usage of global commodities systems.",
+        "Develops tools for monitoring and alerting of application and infrastructure anomalies, generating reports on performance indicators and metrics for management use and automation. These tools have been developed using Object-Oriented PERL, Python, PHP , Unix Shell scripting and Windows shell scripting with applications ranging from stand-alone applets, web-based tools and scheduled processes."
+      ],
+      "responsibilities": [],
+      "technologies": [
+        "OpenLink Findur/ENDUR (v9), Trayport, Trading Technologies, WebICE, Geneos ITRS",
+        "Python, PERL, CGI, C#, Oracle, MS SQL Server, Unix/LINUX, Shell Scripting, AVS Programming, Wintel, CITRIX"
       ]
     }
   ],
   "achievements": [
     "Migration of SCW infrastructure to infrastructure as code using Terraform",
     "Implemented containerization of SCW learning platform using AWS ECS/EKS",
-    "Implemented CI/CD solution for SCW using Azure Devops"
+    "Implemented CI/CD solution for SCW for automated deployment",
+    "Panelist - Secure DevOps: Why is it still important in 2021? By Australian Women in Security Network",
+    "Represented Australia at several World Dragon Boat Championships as paddler/athlete",
+    "Coach - Sydney Tsunami Dragon Boat Club (2018-2024)",
+    "Coach - Redcliffe Red Dragon Boat Club (present)"
   ],
   "education": [
     {
@@ -93,7 +166,8 @@
       "title": "Bachelor of Science in Business Economics",
       "sub_title": "University of the Philippines",
       "years": "1997-2000",
-      "location": "Quezon City, Philippines"
+      "location": "Quezon City, Philippines",
+      "exclude": true
     }
   ],
   "skills": {
@@ -135,6 +209,24 @@
           "icon": "github",
           "level": "Expert",
           "category": "source-control"
+        },
+        {
+          "name": "Jira",
+          "icon": "jira",
+          "level": "Expert",
+          "category": "tracking-system"
+        },
+        {
+          "name": "Confluence",
+          "icon": "confluence",
+          "level": "Expert",
+          "category": "documentation-system"
+        },
+        {
+          "name": "Notion",
+          "icon": "notion",
+          "level": "Expert",
+          "category": "documentation-system"
         }
       ]
     },
@@ -157,7 +249,8 @@
           "name": "Astro",
           "icon": "astro",
           "level": "Advanced",
-          "category": "frontend"
+          "category": "frontend",
+          "exclude": true
         },
         {
           "name": "Yarn",
@@ -313,7 +406,8 @@
           "name": "Oh My Zsh",
           "icon": "ohmyzsh",
           "level": "Advanced",
-          "category": "cicd"
+          "category": "cicd",
+          "exclude": true
         },
         {
           "name": "Postman",
@@ -322,26 +416,35 @@
           "category": "cicd"
         }
       ]
-    }
-  },
-  "projects": [
-    {
-      "imageUrl": "https://learn.pablosspot.com/_astro/home.BqQFpXAB.webp",
-      "title": "Pablo's spot learning",
-      "type": "Website",
-      "link": "https://learn.pablosspot.com"
     },
-    {
-      "imageUrl": "https://sydneytsunami.org.au/static/media/main-min.1883277041bdebc10f67.jpg",
-      "title": "Sydney Tsunami Dragon Boat Club",
-      "type": "Sports club website",
-      "link": "https://sydneytsunami.org.au"
-    },
-    {
-      "imageUrl": "https://i9.ytimg.com/vi_webp/2Unq_AhpSZo/mqdefault.webp?v=6837c1f9&sqp=CPzFhcUG&rs=AOn4CLApPdNjx9ny5N3n6sxGVd2FFYbUWQ",
-      "title": "Pablo's spot",
-      "type": "Youtube channel",
-      "link": "https://www.youtube.com/channel/UCrRCGS8v3Pa5dTxS3xKKipA"
+    "os": {
+      "name": "Operating Systems",
+      "items": [
+        {
+          "name": "Linux",
+          "icon": "linux",
+          "level": "Advanced",
+          "category": "os"
+        },
+        {
+          "name": "MacOS",
+          "icon": "macos",
+          "level": "Advanced",
+          "category": "os"
+        },
+        {
+          "name": "Windows",
+          "icon": "windows11",
+          "level": "Advanced",
+          "category": "os"
+        },
+        {
+          "name": "Unix",
+          "icon": "unix",
+          "level": "Advanced",
+          "category": "os"
+        }
+      ]
     }
-  ]
+  }
 }

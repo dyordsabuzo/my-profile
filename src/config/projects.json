@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "imageUrl": "https://learn.pablosspot.com/_astro/home.BqQFpXAB.webp",
+      "title": "Pablo's spot learning",
+      "type": "Learning resource website",
+      "link": "https://learn.pablosspot.com"
+    },
+    {
+      "imageUrl": "https://sydneytsunami.org.au/static/media/main-min.1883277041bdebc10f67.jpg",
+      "title": "Sydney Tsunami Dragon Boat Club",
+      "type": "Sports club website",
+      "link": "https://sydneytsunami.org.au"
+    },
+    {
+      "imageUrl": "https://yt3.ggpht.com/ytc/AIdro_mpUbUgVN3a0fXcjDeTbWc0_WORqW4e3LJFz_86TcS0nw=s176-c-k-c0x00ffffff-no-rj",
+      "title": "Pablo's spot",
+      "type": "Youtube channel",
+      "link": "https://youtube.com/@pablosspot"
+    }
+  ]
+}

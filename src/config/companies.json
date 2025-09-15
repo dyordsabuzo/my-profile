@@ -1,0 +1,32 @@
+{
+  "companies": [
+    {
+      "name": "Secure Code Warrior",
+      "logo": "https://media.licdn.com/dms/image/v2/D560BAQFWTru0kAwQPQ/company-logo_200_200/company-logo_200_200/0/1721407525341/secure_code_warrior_logo?e=1758758400&v=beta&t=TNmq1y8rvYfmzxZd_jMc38H3yHjn9RmSzExCyoLSDnc",
+      "overview": "Secure Code Warrior is a leading provider of security risk mitigating solutions for developers and organizations."
+    },
+    {
+      "name": "Bambora",
+      "logo": "https://media.licdn.com/dms/image/v2/C4E0BAQGa5eSlBLrZew/company-logo_200_200/company-logo_200_200/0/1630631561026/bambora_logo?e=1758758400&v=beta&t=gxzClsuOSFWCcuLhaGTkb7x0J1AJg4PW1AGQeZTRs4s",
+      "overview": "Bambora is a global payment processing company that offers a range of payment solutions for businesses and consumers."
+    },
+    {
+      "name": "Cuscal",
+      "logo": "https://media.licdn.com/dms/image/v2/D560BAQF42VJ2j446Kg/company-logo_200_200/company-logo_200_200/0/1738711346856/cuscal_logo?e=1759363200&v=beta&t=9R4HbWbvjY-pI-bmWx2pxdKzktmwfzCtmBw5R5hR_bQ",
+      "overview": "Cuscal is a payments and regulated data services provider in Australia."
+    },
+    {
+      "name": "Bank of America Merrill Lynch",
+      "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEL1rI2h3XGxg/company-logo_100_100/company-logo_100_100/0/1676325271208/bank_of_america_logo?e=1759968000&v=beta&t=IX1cin3hkUoLUVV-J_H4gdxQyjme8H6Htk6nI60n73E",
+      "overview": "Bank of America Merrill Lynch is a global financial services company that offers a range of banking, investment, and wealth management services."
+    },
+    {
+      "name": "Royal Melbourne Institute of Technology",
+      "logo": "https://media.licdn.com/dms/image/v2/D560BAQEGU1obJOmROQ/company-logo_200_200/company-logo_200_200/0/1688439184668/rmit_university_logo?e=1758758400&v=beta&t=DNbrStp1ODajYTLivj8UAjEKIdt21x_AL5jOqKB4XpQ"
+    },
+    {
+      "name": "University of the Philippines",
+      "logo": "https://media.licdn.com/dms/image/v2/C560BAQFhc7r3beFtvA/company-logo_200_200/company-logo_200_200/0/1672705537119/university_of_the_philippines_logo?e=1758758400&v=beta&t=txs1hM3gJ9yasyzhgCNDhr0FcANnK_R2GcmxIm7vta8"
+    }
+  ]
+}

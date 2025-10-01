@@ -273,7 +273,9 @@ export async function buildResumePDF(resumeData: any) {
     skills: formattedSkills,
 
     "achievements-header": "ACHIEVEMENTS",
-    achievements: resumeData.achievements,
+    achievements: resumeData.achievements
+      .filter((e: any) => !(e.exclude ?? false))
+      .map((a) => a.description),
 
     "projects-header": "PROJECTS",
     projects: formattedProjects,

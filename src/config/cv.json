@@ -147,13 +147,30 @@
     }
   ],
   "achievements": [
-    "Migration of SCW infrastructure to infrastructure as code using Terraform",
-    "Implemented containerization of SCW learning platform using AWS ECS/EKS",
-    "Implemented CI/CD solution for SCW for automated deployment",
-    "Panelist - Secure DevOps: Why is it still important in 2021? By Australian Women in Security Network",
-    "Represented Australia at several World Dragon Boat Championships as paddler/athlete",
-    "Coach - Sydney Tsunami Dragon Boat Club (2018-2024)",
-    "Coach - Redcliffe Red Dragon Boat Club (present)"
+    {
+      "description": "Migration of SCW infrastructure to infrastructure as code using Terraform"
+    },
+    {
+      "description": "Implemented containerization of SCW learning platform using AWS ECS/EKS"
+    },
+    {
+      "description": "Implemented CI/CD solution for SCW for automated deployment"
+    },
+    {
+      "description": "Panelist - Secure DevOps: Why is it still important in 2021? By Australian Women in Security Network"
+    },
+    {
+      "description": "Represented Australia at several World Dragon Boat Championships as paddler/athlete",
+      "exclude": true
+    },
+    {
+      "description": "Coach - Sydney Tsunami Dragon Boat Club (2018-2024)",
+      "exclude": true
+    },
+    {
+      "description": "Coach - Redcliffe Red Dragon Boat Club (present)",
+      "exclude": true
+    }
   ],
   "education": [
     {

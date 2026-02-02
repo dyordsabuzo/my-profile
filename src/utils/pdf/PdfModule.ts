@@ -98,6 +98,7 @@ export class ModularPDFBuilder {
     regular: PDFFont;
     semibold: PDFFont;
     bold: PDFFont;
+    icon: PDFFont;
   };
   private layout: PDFLayout;
   private styles: FontStyles;
@@ -165,12 +166,13 @@ export class ModularPDFBuilder {
   }
 
   private async loadFonts(pdfDoc: PDFDocument): Promise<void> {
-    const [lightBuffer, regularBuffer, semiboldBuffer, boldBuffer] =
+    const [lightBuffer, regularBuffer, semiboldBuffer, boldBuffer, iconBuffer] =
       await Promise.all([
         loadGoogleFontTTF("Roboto", "light"),
         loadGoogleFontTTF("Roboto", "400"),
         loadGoogleFontTTF("Roboto", "semibold"),
         loadGoogleFontTTF("Roboto", "bold"),
+        loadGoogleFontTTF("Roboto", "icon"),
       ]);
 
     this.fonts = {
@@ -178,6 +180,7 @@ export class ModularPDFBuilder {
       regular: await pdfDoc.embedFont(regularBuffer),
       semibold: await pdfDoc.embedFont(semiboldBuffer),
       bold: await pdfDoc.embedFont(boldBuffer),
+      icon: await pdfDoc.embedFont(iconBuffer),
     };
   }
 

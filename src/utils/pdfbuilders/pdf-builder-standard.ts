@@ -11,7 +11,7 @@ import { StructuredText } from "../pdf/StructuredComponent";
 import { Logger } from "../common/logger";
 
 // Define your layout
-const generalMargin = 50;
+const generalMargin = 40;
 const layout: PDFLayout = {
   pageSize: [595, 842], // A4 size
   margins: {
@@ -22,7 +22,7 @@ const layout: PDFLayout = {
   },
   gaps: {
     sectionToSection: {
-      left: 12,
+      left: 9,
       right: 9,
     },
     headerToContent: 6,
@@ -83,6 +83,12 @@ export async function buildResumePDF(resumeData: any) {
         fontSize: "xsmall",
         spacing: { after: 2 },
       })
+    )
+    .addComponent(
+      Text("webProfile", "header", 3, {
+        fontSize: "xsmall",
+        spacing: { after: 2 },
+      })
     );
 
   // LEFT SECTION (Main Content)
@@ -120,6 +126,7 @@ export async function buildResumePDF(resumeData: any) {
           subheader: "sub_title",
           dateinfo: "years",
           details: "details",
+          subdetails: "subdetails",
           location: "location",
           overview: "overview",
         },
@@ -227,15 +234,21 @@ export async function buildResumePDF(resumeData: any) {
 
   const formattedSkills = [];
   Object.values(resumeData.skills).forEach((value) => {
-    const { name, items } = value as { name: string; items: any[] };
+    const { name, items, exclude } = value as {
+      name: string;
+      items: any[];
+      exclude: boolean;
+    };
 
-    formattedSkills.push({
-      sub_title: name,
-      overview: items
-        .filter((item) => !item.exclude)
-        .map((item) => item.name)
-        .join(" | "),
-    });
+    if (!exclude) {
+      formattedSkills.push({
+        sub_title: name,
+        overview: items
+          .filter((item) => !item.exclude)
+          .map((item) => item.name)
+          .join(" | "),
+      });
+    }
   });
 
   const formattedProjects = resumeData.projects.map((project) => {
@@ -259,6 +272,25 @@ export async function buildResumePDF(resumeData: any) {
     title: resumeData.personalInfo.title,
     contact: resumeData.contactInfo
       .filter((item: string) => !item.includes("LinkedIn"))
+      .map((item: string) => {
+        // if (item.includes("@")) {
+        //   return "✉ " + item;
+        // } else if (item.match(/\d/)) {
+        //   return "☎ " + item;
+        // }
+        return item;
+      })
+      .join(" | "),
+    webProfile: resumeData.webProfile
+      .filter((item: string) => !item.includes("LinkedIn"))
+      .map((item: string) => {
+        // if (item.includes("@")) {
+        //   return "✉ " + item;
+        // } else if (item.match(/\d/)) {
+        //   return "☎ " + item;
+        // }
+        return item;
+      })
       .join(" | "),
 
     // Left section data

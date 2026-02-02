@@ -29,6 +29,7 @@ export class StructuredComponent extends PDFComponent {
         location?: string;
         overview?: string;
         details?: string;
+        subdetails?: string;
       };
     } = { fontSize: "normal", lineSpacing: 5 }
   ) {
@@ -71,6 +72,9 @@ export class StructuredComponent extends PDFComponent {
         const location = structure.location ? object[structure.location] : null;
         const overview = structure.overview ? object[structure.overview] : null;
         const details = structure.details ? object[structure.details] : null;
+        const subdetails = structure.subdetails
+          ? object[structure.subdetails]
+          : null;
 
         if (header && typeof header === "string") {
           page.drawText(header, {
@@ -191,6 +195,39 @@ export class StructuredComponent extends PDFComponent {
 
             currentY -= textHeight;
           });
+        }
+
+        if (subdetails && typeof subdetails === "string") {
+          page.drawText("•", {
+            x: bounds.x,
+            y: currentY,
+            size: detailsFontSize,
+            font,
+            color: style.color,
+          });
+
+          // Calculate text height for wrapped text
+          const textHeight = this.getWrappedTextDimension(
+            subdetails,
+            font,
+            detailsFontSize,
+            bounds.width - indent,
+            lineHeight
+          );
+
+          // Draw item text
+          page.drawText(subdetails, {
+            x: bounds.x + indent,
+            y: currentY,
+            size: detailsFontSize,
+            font,
+            color: style.color,
+            maxWidth: bounds.width - indent,
+            lineHeight,
+            wordBreaks: [" "],
+          });
+
+          currentY -= textHeight;
         }
 
         // Draw line if enabled

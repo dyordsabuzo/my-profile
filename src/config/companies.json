@@ -2,17 +2,17 @@
   "companies": [
     {
       "name": "Secure Code Warrior",
-      "logo": "./my-profile/assets/companies/secure_code_warrior_logo.jpeg",
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/companies/secure_code_warrior_logo.jpeg",
       "overview": "Secure Code Warrior is a leading provider of security risk mitigating solutions for developers and organizations."
     },
     {
       "name": "Bambora",
-      "logo": "./my-profile/assets/companies/bambora_logo.jpeg",
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/companies/bambora_logo.jpeg",
       "overview": "Bambora is a global payment processing company that offers a range of payment solutions for businesses and consumers."
     },
     {
       "name": "Cuscal",
-      "logo": "./my-profile/assets/companies/cuscal_logo.jpeg",
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/companies/cuscal_logo.jpeg",
       "overview": "Cuscal is a payments and regulated data services provider in Australia."
     },
     {
@@ -22,11 +22,11 @@
     },
     {
       "name": "Royal Melbourne Institute of Technology",
-      "logo": "./my-profile/assets/schools/rmit_university_logo.jpeg"
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/schools/rmit_university_logo.jpeg"
     },
     {
       "name": "University of the Philippines",
-      "logo": "./my-profile/assets/schools/university_of_the_philippines_logo.jpeg"
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/schools/university_of_the_philippines_logo.jpeg"
     }
   ]
 }

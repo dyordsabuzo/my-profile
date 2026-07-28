@@ -50,7 +50,7 @@
       "location": "Queensland, Australia",
       "details": [
         "Took a planned career break to travel around Australia.",
-        "Engaged in short-term as well as not-for-profit projects focused on containerisation, infrastructure setup and cloud migration mostly with AWS and implementation of CI/CD solutions and practices.",
+        "Engaged in short-term as well as not-for-profit projects focused on containerisation, infrastructure setup, cloud migration and multi-tenant architecting mostly with AWS and implementation of CI/CD solutions and practices.",
         "Engaged in startup projects building typescript based web applications deployed on Firebase"
       ],
       "subdetails": "Tech stack: AWS, AWS CDK (Typescript), NodeJS (React), Firebase, Python"
@@ -166,7 +166,7 @@
   ],
   "achievements": [
     {
-      "description": "Led SCW's migration to Infrastructure as Code (IaC) and containerized the learning platform on AWS ECS/EKS, delivering reusable, repeatable, scalable infrastructure."
+      "description": "Led SCW's migration to Infrastructure as Code (IaC) and containerized the learning platform on AWS ECS/EKS, delivering reusable, repeatable, scalable infrastructure on multi-tenant architecture."
     },
     {
       "description": "Built reusable Terraform modules for infrastructure provisioning and deployment; ran regular brown-bag sessions to embed IaC best practices across teams."

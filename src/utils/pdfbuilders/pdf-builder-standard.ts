@@ -69,13 +69,13 @@ export async function buildResumePDF(resumeData: any) {
         fontSize: "large",
         isBold: true,
         alignment: "left",
-        spacing: { after: 1 },
+        spacing: { after: 0.5 },
       })
     )
     .addComponent(
       Text("title", "header", 2, {
         fontSize: "normal",
-        spacing: { after: 2 },
+        spacing: { after: 1 },
       })
     )
     .addComponent(
@@ -103,7 +103,7 @@ export async function buildResumePDF(resumeData: any) {
     .addComponent(
       Text("summary", "left", 2, {
         fontSize: "small",
-        spacing: { after: layout.gaps.sectionToSection.left ?? 20 },
+        spacing: { after: (layout.gaps.sectionToSection.left ?? 20) - 8 },
         addTextHeight: true,
       })
     );

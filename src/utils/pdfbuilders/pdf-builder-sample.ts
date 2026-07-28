@@ -96,7 +96,7 @@ export async function buildResumePDF(resumeData: any) {
     .addComponent(
       Text("summary", "left", 2, {
         fontSize: "normal",
-        spacing: { after: layout.gaps.sectionToSection ?? 20 },
+        spacing: { after: (layout.gaps.sectionToSection.left ?? 20) - 8 },
         addTextHeight: true,
       })
     );
@@ -112,7 +112,7 @@ export async function buildResumePDF(resumeData: any) {
     .addComponent(
       StructuredText("experience", "left", 4, {
         fontSize: "normal",
-        spacing: { after: layout.gaps.sectionToSection ?? 20 },
+        spacing: { after: layout.gaps.sectionToSection.left ?? 20 },
         lineSpacing: 1,
         fieldOrder: ["position", "company", "duration", "achievements"],
         lineColor: rgb(0.8, 0.8, 0.8),
@@ -134,7 +134,7 @@ export async function buildResumePDF(resumeData: any) {
         fontSize: "normal",
         bulletStyle: "•",
         itemSpacing: 2,
-        spacing: { after: layout.gaps.sectionToSection ?? 20 },
+        spacing: { after: layout.gaps.sectionToSection.right ?? 20 },
       })
     )
     .addComponent(

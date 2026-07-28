@@ -44,6 +44,17 @@
       "exclude": true
     },
     {
+      "title": "Career break",
+      "sub_title": "Career break & independent projects",
+      "years": "09/2025 - 06/2026",
+      "location": "Queensland, Australia",
+      "details": [
+        "Took a planned career break to travel around Australia.",
+        "Engaged in short-term as well as not-for-profit projects focused on containerisation, infrastructure setup and cloud migration mostly with AWS and implementation of CI/CD solutions and practices.",
+        "Engaged in startup projects building typescript based web applications deployed on Firebase"
+      ]
+    },
+    {
       "title": "Senior Devops Lead",
       "sub_title": "Secure Code Warrior",
       "years": "08/2019 - 08/2025",
@@ -53,7 +64,7 @@
         "Project management of all components for environment rollout & related infrastructure initiatives. Develop documentation for best practices for server infrastructure, virtualization, and cloud computing.  Review operations and business requirements for projects pertaining to Secure Code Warrior's cloud infrastructure with all project teams, management and client services groups.",
         "Provide support in ensuring security compliance - ISO20071, SOC2, GDPR"
       ],
-      "subdetails": "Tech stack: AWS, Azure, AWS CDK, Terraform, Kubernetes, NodeJS (React, Angular), Python, MongoDB",
+      "subdetails": "Tech stack: AWS, Azure, AWS CDK (Typescript), Terraform, Kubernetes, NodeJS (React, Angular), Python, MongoDB",
       "responsibilities": [
         "Architecture, design, and support of the Secure Code Warrior cloud and infrastructure strategy (AWS)",
         "Lead junior cloud engineers to understand, build & maintain infrastructure",

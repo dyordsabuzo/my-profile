@@ -21,8 +21,18 @@
     },
     {
       "name": "Bank of America Merrill Lynch",
-      "logo": "https://media.licdn.com/dms/image/v2/C4D0BAQEL1rI2h3XGxg/company-logo_100_100/company-logo_100_100/0/1676325271208/bank_of_america_logo?e=1759968000&v=beta&t=IX1cin3hkUoLUVV-J_H4gdxQyjme8H6Htk6nI60n73E",
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/companies/bom.webp",
       "overview": "Bank of America Merrill Lynch is a global financial services company that offers a range of banking, investment, and wealth management services."
+    },
+    {
+      "name": "JP Morgan",
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/companies/jpmorgan.png",
+      "overview": "JP Morgan is a global financial services company that offers a range of banking, investment, and wealth management services."
+    },
+    {
+      "name": "Accenture",
+      "logo": "https://dyordsabuzo.github.io/my-profile/assets/companies/accenture.jpg",
+      "overview": "Accenture is a global professional services company providing consulting, technology and outsourcing services."
     },
     {
       "name": "Royal Melbourne Institute of Technology",

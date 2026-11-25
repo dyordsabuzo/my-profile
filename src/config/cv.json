@@ -2,9 +2,9 @@
   "basic": {
     "name": "George Abuzo",
     "title": "Senior Software Engineer | Cloud Engineering | Devops | Systems Architecture",
-    "summary": "Driving innovation and efficiency with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities. Passionate about coding and applying creative solutions to business problems, with a strong focus on continuous learning, modern frameworks, and impactful delivery. Equally confident working independently or collaboratively, I bring at least 20 years of work experience with strong leadership, adaptability and a proven ability to turn ideas into results.",
+    "summary": "Driving innovation and efficiency with hands-on DEVOPS and Security first mindset leveraging on diverse toolkit of enterprise and open-source technologies to transform complex business challenges into opportunities. Grounded in a strong software engineering background spanning the full software development lifecycle. Passionate about coding and applying creative solutions to business problems, with a strong focus on continuous learning, modern frameworks, and impactful delivery. Equally confident working independently or collaboratively, I bring at least 20 years of work experience with strong leadership, adaptability and a proven ability to turn ideas into results.",
     "cv_file_name": "paul_cv.pdf",
-    "summary_short": "Innovative DevOps and Security-focused professional, skilled in leveraging both enterprise and open-source tools to turn complex challenges into growth opportunities. Passionate coder and creative problem-solver, committed to continuous learning and delivering impactful solutions with modern frameworks. Thrives independently or in teams, bringing strong leadership, adaptability, and a proven track record of turning ideas into real-world results.",
+    "summary_short": "Innovative DevOps and Security-focused professional with a strong software engineering background, skilled in leveraging both enterprise and open-source tools to turn complex challenges into growth opportunities. Passionate coder and creative problem-solver, committed to continuous learning and delivering impactful solutions with modern frameworks. Thrives independently or in teams, bringing strong leadership, adaptability, and a proven track record of turning ideas into real-world results.",
     "photo": "https://dyordsabuzo.github.io/my-profile/assets/my-profile.jpeg"
   },
   "contactInfo": [
@@ -41,7 +41,8 @@
         "K8S Management - ArgoCD",
         "Monitoring - Datadog"
       ],
-      "exclude": true
+      "excludeFromCV": true,
+      "hide": true
     },
     {
       "title": "Career break",
@@ -53,7 +54,7 @@
         "Engaged in short-term as well as not-for-profit projects focused on containerisation, infrastructure setup, cloud migration and multi-tenant architecting mostly with AWS and implementation of CI/CD solutions and practices.",
         "Engaged in startup projects building typescript based web applications deployed on Firebase"
       ],
-      "subdetails": "Tech stack: AWS, AWS CDK (Typescript), NodeJS (React), Firebase, Python"
+      "subdetails": "Tech stack: Azure, Terraform, AWS, AWS CDK (Typescript), NodeJS (React), Firebase, Python"
     },
     {
       "title": "Senior Devops Lead",
@@ -63,7 +64,8 @@
       "details": [
         "Architecture, design, and support of the Secure Code Warrior cloud and infrastructure strategy (AWS & Azure). Lead junior cloud engineers to understand, build & maintain infrastructure. Partners internally with tech-leads, product team and customer success to provide expert guidance on infrastructure, deployment and observability ofthe company's cloud environment.  Provide support to technical leads to enable a streamlined development environment for developers through best practices towards Continuous Integration & Continuous Delivery (CI/CD).",
         "Project management of all components for environment rollout & related infrastructure initiatives. Develop documentation for best practices for server infrastructure, virtualization, and cloud computing.  Review operations and business requirements for projects pertaining to Secure Code Warrior's cloud infrastructure with all project teams, management and client services groups.",
-        "Provide support in ensuring security compliance - ISO20071, SOC2, GDPR"
+        "Provide support in ensuring security compliance - ISO20071, SOC2, GDPR",
+        "Software Engineering: Built platform and developer engagement components of the learning platform, including tournaments and gamification, micro learning, login and SSO, and organisational hierarchy. Developed partner integrations and APIs, and remediated security vulnerabilities."
       ],
       "subdetails": "Tech stack: AWS, Azure, AWS CDK (Typescript), Terraform, Kubernetes, NodeJS (React, Angular), Python, MongoDB",
       "responsibilities": [
@@ -146,7 +148,7 @@
       ]
     },
     {
-      "exclude": true,
+      "excludeFromCV": true,
       "title": "Application Support Engineer",
       "sub_title": "Bank of America Merrill Lynch",
       "years": "08/2011 – 09/2012",
@@ -161,6 +163,43 @@
       "technologies": [
         "OpenLink Findur/ENDUR (v9), Trayport, Trading Technologies, WebICE, Geneos ITRS",
         "Python, PERL, CGI, C#, Oracle, MS SQL Server, Unix/LINUX, Shell Scripting, AVS Programming, Wintel, CITRIX"
+      ]
+    },
+    {
+      "excludeFromCV": true,
+      "title": "Application Support Engineer",
+      "sub_title": "JP Morgan",
+      "years": "08/2007 – 08/2011",
+      "location": "Singapore",
+      "details": [
+        "Trading Platform (Application and Infrastructure) management and support for Global Commodities business.",
+        "Provides Application Service Delivery (Level 1/Level 2 Technology) for Global Commodities Business platforms and applications.",
+        "Involvement in 'Lights On/Business-As-Usual' service delivery to global trading desk and monitoring/management of day-to-day processes and usage of global commodities systems.",
+        "Develops tools for monitoring and alerting of application and infrastructure anomalies, generating reports on performance indicators and metrics for management use and automation. These tools have been developed using Object-Oriented PERL, Python, PHP , Unix Shell scripting and Windows shell scripting with applications ranging from stand-alone applets, web-based tools and scheduled processes."
+      ],
+      "responsibilities": [],
+      "technologies": [
+        "OpenLink Findur/ENDUR (v9), Trayport, Trading Technologies, WebICE, Geneos ITRS",
+        "Python, PERL, CGI, C#, Oracle, MS SQL Server, Unix/LINUX, Shell Scripting, AVS Programming, Wintel, CITRIX"
+      ]
+    },
+    {
+      "excludeFromCV": true,
+      "title": "Systems Lead / Application Developer",
+      "sub_title": "Accenture",
+      "years": "06/2000 – 07/2007",
+      "location": "Manila, Philippines",
+      "details": [
+        "Built my software engineering foundation through seven years of hands-on software development at Accenture, leading a team of developers in the design, development and maintenance of enterprise applications for global clients.",
+        "Developed applications using C++ and Java for Banking and Finance, and Communications and High Technology clients.",
+        "End-to-end exposure to the full Software Development Lifecycle (SDLC): requirements gathering and analysis, technical design and specifications, coding, code reviews, unit, integration, system and user acceptance testing, release management, deployment and post-production support.",
+        "Translated business requirements from client stakeholders into technical designs, and delivered new features, enhancements and defect fixes using structured development methodologies, source control and change management practices.",
+        "Provided production support, issue investigation and resolution, and coordinated releases with QA and operations teams."
+      ],
+      "responsibilities": [],
+      "technologies": [
+        "C++, Java, C#, VB.Net, ASP.Net, PL/SQL",
+        "Oracle, MS SQL Server, Unix/Linux, Shell Scripting"
       ]
     }
   ],
@@ -185,7 +224,7 @@
     },
     {
       "description": "Coach, Sydney Tsunami Dragon Boat Club (2018–2024)",
-      "exclude": true
+      "excludeFromCV": true
     },
     {
       "description": "Head Coach, Redcliffe Red Dragon Boat Club (present)"
@@ -203,7 +242,7 @@
       "sub_title": "University of the Philippines",
       "years": "1997-2000",
       "location": "Quezon City, Philippines",
-      "exclude": true
+      "excludeFromCV": true
     }
   ],
   "skills": {
@@ -253,7 +292,7 @@
           "icon": "podman",
           "level": "Expert",
           "category": "devops",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "ArgoCD",
@@ -295,7 +334,7 @@
           "icon": "bamboo",
           "level": "Advanced",
           "category": "cicd",
-          "exclude": true
+          "excludeFromCV": true
         }
       ]
     },
@@ -307,7 +346,7 @@
           "icon": "javascript",
           "level": "Expert",
           "category": "language",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "TypeScript",
@@ -338,35 +377,35 @@
           "icon": "jira",
           "level": "Expert",
           "category": "tracking-system",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Confluence",
           "icon": "confluence",
           "level": "Expert",
           "category": "documentation-system",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Notion",
           "icon": "notion",
           "level": "Expert",
           "category": "documentation-system",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Git",
           "icon": "git",
           "level": "Expert",
           "category": "source-control",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Go",
           "icon": "go",
           "level": "Intermediate",
           "category": "language",
-          "exclude": true
+          "excludeFromCV": true
         }
       ]
     },
@@ -396,21 +435,21 @@
           "icon": "astro",
           "level": "Advanced",
           "category": "frontend",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Yarn",
           "icon": "yarn",
           "level": "Advanced",
           "category": "frontend",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Bun",
           "icon": "bun",
           "level": "Advanced",
           "category": "frontend",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Mocha",
@@ -430,7 +469,7 @@
           "icon": "storybook",
           "level": "Advanced",
           "category": "frontend",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "MongoDB",
@@ -448,7 +487,7 @@
     },
     "tools": {
       "name": "Observability & Infrastructure Tools",
-      "exclude": true,
+      "excludeFromCV": true,
       "items": [
         {
           "name": "Datadog",
@@ -480,7 +519,7 @@
           "icon": "ohmyzsh",
           "level": "Advanced",
           "category": "cicd",
-          "exclude": true
+          "excludeFromCV": true
         },
         {
           "name": "Postman",
@@ -492,7 +531,7 @@
     },
     "os": {
       "name": "Operating Systems",
-      "exclude": true,
+      "excludeFromCV": true,
       "items": [
         {
           "name": "Linux",

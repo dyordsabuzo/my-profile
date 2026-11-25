@@ -23,6 +23,18 @@
       "title": "Pablo's spot",
       "type": "Youtube channel",
       "link": "https://youtube.com/@pablosspot"
+    },
+    {
+      "imageUrl": "https://fit.pablosspot.com/logo192.png",
+      "title": "Training Planner",
+      "type": "Web application for fitness instructors",
+      "link": "https://fit.pablosspot.com"
+    },
+    {
+      "imageUrl": "https://kots.pablosspot.com/og-image.png",
+      "title": "Kots",
+      "type": "Coaching web application for sports coaches",
+      "link": "https://kots.pablosspot.com"
     }
   ]
 }

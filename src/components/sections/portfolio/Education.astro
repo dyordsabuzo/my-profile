@@ -3,7 +3,7 @@ import CardListSection from './CardListSection.astro';
 import { education } from '../../../config/cv.json';
 import { companies } from '../../../config/companies.json';
 
-const updatedEducation = education.map((item) => {
+const updatedEducation = education.filter((item: any) => !item.hide).map((item) => {
   const photo = companies.find((company) => company.name === item.sub_title)?.logo;
   return {
     ...item,

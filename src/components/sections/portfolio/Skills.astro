@@ -4,11 +4,11 @@ import SkillItem from './SkillItem.astro';
 
 let skillCategories = {};
 
-Object.values(skills).forEach(value => {
+Object.values(skills).filter((value: any) => !value.hide).forEach(value => {
   const {name,items} = value;
     skillCategories = {
       ...skillCategories,
-      [name]: items
+      [name]: items.filter((item: any) => !item.hide)
     }
 });
 ---

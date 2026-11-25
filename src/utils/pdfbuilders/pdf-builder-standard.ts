@@ -229,29 +229,30 @@ export async function buildResumePDF(resumeData: any) {
     );
 
   const filteredExperiences = resumeData.experiences.filter(
-    (e: any) => !(e.exclude ?? false)
+    (e: any) => !(e.excludeFromCV || e.hide)
   );
 
   const formattedSkills = [];
   Object.values(resumeData.skills).forEach((value) => {
-    const { name, items, exclude } = value as {
+    const { name, items, excludeFromCV, hide } = value as {
       name: string;
       items: any[];
-      exclude: boolean;
+      excludeFromCV: boolean;
+      hide?: boolean;
     };
 
-    if (!exclude) {
+    if (!excludeFromCV && !hide) {
       formattedSkills.push({
         sub_title: name,
         overview: items
-          .filter((item) => !item.exclude)
+          .filter((item) => !item.excludeFromCV && !item.hide)
           .map((item) => item.name)
           .join(" | "),
       });
     }
   });
 
-  const formattedProjects = resumeData.projects.map((project) => {
+  const formattedProjects = resumeData.projects.filter((p: any) => !p.hide).map((project) => {
     return {
       sub_title: project.type,
       overview: `${project.title} | ${project.link}`,
@@ -306,14 +307,14 @@ export async function buildResumePDF(resumeData: any) {
 
     "achievements-header": "ACHIEVEMENTS",
     achievements: resumeData.achievements
-      .filter((e: any) => !(e.exclude ?? false))
+      .filter((e: any) => !(e.excludeFromCV || e.hide))
       .map((a) => a.description),
 
     "projects-header": "PROJECTS",
     projects: formattedProjects,
 
     "education-header": "EDUCATION",
-    education: resumeData.education.filter((e: any) => !(e.exclude ?? false)),
+    education: resumeData.education.filter((e: any) => !(e.excludeFromCV || e.hide)),
   };
 
   return builder.build(data);

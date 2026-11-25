@@ -14,7 +14,7 @@ import { projects } from '../../../config/projects.json';
         </p>
 
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-            {projects.map(project => (
+            {projects.filter((project: any) => !project.hide).map(project => (
                 <Project
                     imageUrl={project.imageUrl}
                     title={project.title}

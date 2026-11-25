@@ -5,7 +5,7 @@ import { companies } from "../../config/companies.json";
 import { projects } from "../../config/projects.json";
 
 export default function CustomButton() {
-  const handleClick = async () => {
+  const handleClick = async (full: boolean) => {
     try {
       const experiences = cv.experiences.map((e) => {
         return {
@@ -25,7 +25,7 @@ export default function CustomButton() {
         },
         projects,
       };
-      const pdfDoc = await buildResumePDF(resumeData);
+      const pdfDoc = await buildResumePDF(resumeData, { full });
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes as any], { type: "application/pdf" });
       const pdfUrl = URL.createObjectURL(blob);
@@ -37,7 +37,7 @@ export default function CustomButton() {
         // Fallback: download the file
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "resume.pdf";
+        link.download = full ? "resume-full.pdf" : "resume.pdf";
         link.click();
       } else {
         Logger.info("📄 PDF opened in new tab");
@@ -53,14 +53,22 @@ export default function CustomButton() {
   };
 
   return (
-    <div>
+    <div className="flex flex-wrap gap-4">
       <button
-        onClick={handleClick}
+        onClick={() => handleClick(false)}
         className="inline-flex items-center justify-center px-10 py-4 text-base text-white
           font-semibold transition-all duration-200 rounded
           bg-primary hover:bg-secondary focus:bg-secondary"
       >
-        Download CSV
+        Download CV
+      </button>
+      <button
+        onClick={() => handleClick(true)}
+        className="inline-flex items-center justify-center px-10 py-4 text-base text-white
+          font-semibold transition-all duration-200 rounded
+          bg-primary hover:bg-secondary focus:bg-secondary"
+      >
+        Download Full CV
       </button>
     </div>
   );

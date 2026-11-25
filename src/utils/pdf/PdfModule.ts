@@ -45,6 +45,13 @@ export interface SectionBounds {
   width: number;
   height: number;
   currentY: number;
+  // Moves to the next page when `needed` points don't fit below `y`.
+  // Undefined for sections that never overflow (header).
+  ensureSpace?: (
+    page: PDFPage,
+    y: number,
+    needed: number
+  ) => { page: PDFPage; y: number };
 }
 
 export interface ComponentConfig {
@@ -72,6 +79,16 @@ export abstract class PDFComponent {
     bounds: SectionBounds,
     data: any
   ): number; // Returns new Y position
+
+  // Returns the page/y to draw at, breaking to a new page if needed
+  protected fit(
+    bounds: SectionBounds,
+    page: PDFPage,
+    y: number,
+    needed: number
+  ): { page: PDFPage; y: number } {
+    return bounds.ensureSpace ? bounds.ensureSpace(page, y, needed) : { page, y };
+  }
 
   getConfig(): ComponentConfig {
     return this.config;
@@ -102,6 +119,7 @@ export class ModularPDFBuilder {
   };
   private layout: PDFLayout;
   private styles: FontStyles;
+  private pdfDoc!: PDFDocument;
 
   constructor(layout: PDFLayout, styles: FontStyles) {
     this.layout = layout;
@@ -138,6 +156,7 @@ export class ModularPDFBuilder {
     return Logger.withTryCatch(async () => {
       const pdfDoc = await PDFDocument.create();
       pdfDoc.registerFontkit(fontkit);
+      this.pdfDoc = pdfDoc;
 
       // Load fonts
       await this.loadFonts(pdfDoc);
@@ -237,11 +256,34 @@ export class ModularPDFBuilder {
     const components = this.getComponentsBySection(section);
     let currentY = bounds.currentY;
 
+    // Columns flow onto continuation pages; each column tracks its own page.
+    let pageIndex = 0;
+    const ensureSpace =
+      section === "header"
+        ? undefined
+        : (p: PDFPage, y: number, needed: number) => {
+            if (y - needed >= this.layout.margins.bottom) {
+              return { page: p, y };
+            }
+            pageIndex++;
+            page =
+              this.pdfDoc.getPages()[pageIndex] ??
+              this.pdfDoc.addPage(this.layout.pageSize);
+            return {
+              page,
+              y: this.layout.pageSize[1] - this.layout.margins.top,
+            };
+          };
+
     for (const component of components) {
       try {
         const componentData = data[component.getId()];
         if (componentData !== undefined) {
-          const sectionBounds: SectionBounds = { ...bounds, currentY };
+          const sectionBounds: SectionBounds = {
+            ...bounds,
+            currentY,
+            ensureSpace,
+          };
           currentY = component.render(
             page,
             this.fonts,

@@ -67,6 +67,8 @@ export class TextComponent extends PDFComponent {
           )
         : 0;
 
+      ({ page, y: currentY } = this.fit(bounds, page, currentY, style.size + textHeight));
+
       page.drawText(text, {
         x,
         y: currentY,

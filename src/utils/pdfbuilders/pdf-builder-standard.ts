@@ -59,7 +59,13 @@ const styles: FontStyles = {
 };
 
 // Build your resume PDF
-export async function buildResumePDF(resumeData: any) {
+export async function buildResumePDF(
+  resumeData: any,
+  { full = false }: { full?: boolean } = {}
+) {
+  // `hide` always removes an item; `excludeFromCV` only applies to the standard CV
+  const isIncluded = (e: any) => !e.hide && (full || !e.excludeFromCV);
+
   const builder = new ModularPDFBuilder(layout, styles);
 
   // HEADER SECTION
@@ -229,30 +235,28 @@ export async function buildResumePDF(resumeData: any) {
     );
 
   const filteredExperiences = resumeData.experiences.filter(
-    (e: any) => !(e.excludeFromCV || e.hide)
+    isIncluded
   );
 
   const formattedSkills = [];
   Object.values(resumeData.skills).forEach((value) => {
-    const { name, items, excludeFromCV, hide } = value as {
+    const { name, items } = value as {
       name: string;
       items: any[];
-      excludeFromCV: boolean;
-      hide?: boolean;
     };
 
-    if (!excludeFromCV && !hide) {
+    if (isIncluded(value)) {
       formattedSkills.push({
         sub_title: name,
         overview: items
-          .filter((item) => !item.excludeFromCV && !item.hide)
+          .filter(isIncluded)
           .map((item) => item.name)
           .join(" | "),
       });
     }
   });
 
-  const formattedProjects = resumeData.projects.filter((p: any) => !p.hide).map((project) => {
+  const formattedProjects = resumeData.projects.filter(isIncluded).map((project) => {
     return {
       sub_title: project.type,
       overview: `${project.title} | ${project.link}`,
@@ -307,14 +311,14 @@ export async function buildResumePDF(resumeData: any) {
 
     "achievements-header": "ACHIEVEMENTS",
     achievements: resumeData.achievements
-      .filter((e: any) => !(e.excludeFromCV || e.hide))
+      .filter(isIncluded)
       .map((a) => a.description),
 
     "projects-header": "PROJECTS",
     projects: formattedProjects,
 
     "education-header": "EDUCATION",
-    education: resumeData.education.filter((e: any) => !(e.excludeFromCV || e.hide)),
+    education: resumeData.education.filter(isIncluded),
   };
 
   return builder.build(data);

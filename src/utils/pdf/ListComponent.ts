@@ -51,6 +51,17 @@ export class ListComponent extends PDFComponent {
       const indent = this.options.indent || 10;
 
       items.forEach((item, index) => {
+        // Calculate text height for wrapped text
+        const textHeight = this.getWrappedTextHeight(
+          item,
+          font,
+          style.size,
+          bounds.width - indent - 10,
+          style.size + 2
+        );
+
+        ({ page, y: currentY } = this.fit(bounds, page, currentY, textHeight));
+
         // Draw bullet
         page.drawText(this.options.bulletStyle || "•", {
           x: bounds.x,
@@ -60,15 +71,6 @@ export class ListComponent extends PDFComponent {
           color: style.color,
         });
 
-        // Calculate text height for wrapped text
-        const textHeight = this.getWrappedTextHeight(
-          item,
-          font,
-          style.size,
-          bounds.width - indent,
-          style.size + 2
-        );
-
         // Draw item text
         page.drawText(item, {
           x: bounds.x + indent,
@@ -76,7 +78,7 @@ export class ListComponent extends PDFComponent {
           size: style.size,
           font,
           color: style.color,
-          maxWidth: bounds.width - indent,
+          maxWidth: bounds.width - indent - 10,
           lineHeight: style.size + 2,
           wordBreaks: [" "],
         });

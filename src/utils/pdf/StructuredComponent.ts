@@ -76,6 +76,63 @@ export class StructuredComponent extends PDFComponent {
           ? object[structure.subdetails]
           : null;
 
+        // Right edge shared by text, dates and divider lines
+        const contentWidth = bounds.width - 10;
+        const detailsFontSize =
+          this.options.fontSize !== "base" ? style.size - 2 : style.size - 1;
+        const lineHeight = detailsFontSize + 2;
+
+        // Subheader wraps in the space left of the location
+        const locationWidth =
+          location && typeof location === "string"
+            ? font.widthOfTextAtSize(location, detailsFontSize) + 8
+            : 0;
+        const subheaderWidth = contentWidth - locationWidth;
+        const subheaderLineHeight = style.size + 2;
+        const subheaderExtra =
+          subheader && typeof subheader === "string"
+            ? this.getWrappedTextDimension(
+                subheader,
+                fonts.semibold,
+                style.size,
+                subheaderWidth,
+                subheaderLineHeight
+              ) - subheaderLineHeight
+            : 0;
+
+        const overviewHeight =
+          overview && typeof overview === "string"
+            ? this.getWrappedTextDimension(
+                overview,
+                font,
+                detailsFontSize,
+                contentWidth,
+                lineHeight
+              )
+            : 0;
+        const firstDetail = Array.isArray(details) ? details[0] : subdetails;
+        const firstDetailHeight =
+          firstDetail && typeof firstDetail === "string"
+            ? this.getWrappedTextDimension(
+                firstDetail,
+                font,
+                detailsFontSize,
+                contentWidth - indent,
+                lineHeight
+              )
+            : 0;
+
+        // Keep the item's header block with its overview and first bullet
+        ({ page, y: currentY } = this.fit(
+          bounds,
+          page,
+          currentY,
+          (style.size + lineSpacing) * 2 +
+            subheaderExtra +
+            overviewHeight +
+            firstDetailHeight
+        ));
+
         if (header && typeof header === "string") {
           page.drawText(header, {
             x: bounds.x,
@@ -112,7 +169,9 @@ export class StructuredComponent extends PDFComponent {
             size: style.size,
             font: fonts.semibold,
             color: style.color,
-            maxWidth: bounds.width,
+            maxWidth: subheaderWidth,
+            lineHeight: subheaderLineHeight,
+            wordBreaks: [" "],
           });
         }
 
@@ -131,20 +190,11 @@ export class StructuredComponent extends PDFComponent {
         }
 
         if (subheader || location) {
-          currentY -= style.size + lineSpacing;
+          currentY -= style.size + lineSpacing + subheaderExtra;
         }
 
-        const detailsFontSize =
-          this.options.fontSize !== "base" ? style.size - 2 : style.size - 1;
-        const lineHeight = detailsFontSize + 2;
         if (overview && typeof overview === "string") {
-          const textHeight = this.getWrappedTextDimension(
-            overview,
-            font,
-            detailsFontSize,
-            bounds.width,
-            lineHeight
-          );
+          ({ page, y: currentY } = this.fit(bounds, page, currentY, overviewHeight));
 
           // Draw item text
           page.drawText(overview, {
@@ -153,16 +203,27 @@ export class StructuredComponent extends PDFComponent {
             size: detailsFontSize,
             font,
             color: style.color,
-            maxWidth: bounds.width,
+            maxWidth: contentWidth,
             lineHeight,
             wordBreaks: [" "],
           });
 
-          currentY -= textHeight;
+          currentY -= overviewHeight;
         }
 
         if (Array.isArray(details)) {
           details.forEach((item) => {
+            // Calculate text height for wrapped text
+            const textHeight = this.getWrappedTextDimension(
+              item,
+              font,
+              detailsFontSize,
+              contentWidth - indent,
+              lineHeight
+            );
+
+            ({ page, y: currentY } = this.fit(bounds, page, currentY, textHeight));
+
             // Draw bullet
             page.drawText("•", {
               x: bounds.x,
@@ -172,15 +233,6 @@ export class StructuredComponent extends PDFComponent {
               color: style.color,
             });
 
-            // Calculate text height for wrapped text
-            const textHeight = this.getWrappedTextDimension(
-              item,
-              font,
-              detailsFontSize,
-              bounds.width - indent,
-              lineHeight
-            );
-
             // Draw item text
             page.drawText(item, {
               x: bounds.x + indent,
@@ -188,7 +240,7 @@ export class StructuredComponent extends PDFComponent {
               size: detailsFontSize,
               font,
               color: style.color,
-              maxWidth: bounds.width - indent,
+              maxWidth: contentWidth - indent,
               lineHeight,
               wordBreaks: [" "],
             });
@@ -198,6 +250,17 @@ export class StructuredComponent extends PDFComponent {
         }
 
         if (subdetails && typeof subdetails === "string") {
+          // Calculate text height for wrapped text
+          const textHeight = this.getWrappedTextDimension(
+            subdetails,
+            font,
+            detailsFontSize,
+            contentWidth - indent,
+            lineHeight
+          );
+
+          ({ page, y: currentY } = this.fit(bounds, page, currentY, textHeight));
+
           page.drawText("•", {
             x: bounds.x,
             y: currentY,
@@ -206,15 +269,6 @@ export class StructuredComponent extends PDFComponent {
             color: style.color,
           });
 
-          // Calculate text height for wrapped text
-          const textHeight = this.getWrappedTextDimension(
-            subdetails,
-            font,
-            detailsFontSize,
-            bounds.width - indent,
-            lineHeight
-          );
-
           // Draw item text
           page.drawText(subdetails, {
             x: bounds.x + indent,
@@ -222,7 +276,7 @@ export class StructuredComponent extends PDFComponent {
             size: detailsFontSize,
             font,
             color: style.color,
-            maxWidth: bounds.width - indent,
+            maxWidth: contentWidth - indent,
             lineHeight,
             wordBreaks: [" "],
           });

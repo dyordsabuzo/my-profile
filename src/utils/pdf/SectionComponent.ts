@@ -45,6 +45,9 @@ export class SectionHeaderComponent extends PDFComponent {
 
       const style = styles[this.options.fontSize];
 
+      // Keep the header with at least a few lines of its content
+      ({ page, y: currentY } = this.fit(bounds, page, currentY, style.size + 50));
+
       // Draw section title
       page.drawText(title, {
         x: bounds.x,
